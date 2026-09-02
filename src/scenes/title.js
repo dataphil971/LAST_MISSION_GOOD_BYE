@@ -67,12 +67,23 @@ export class TitleScene extends Scene {
   }
 }
 
-/** Titre agrandi ×2 en respectant la grille : on double les pixels. */
+/**
+ * Titre agrandi ×2 en respectant la grille : on double les pixels.
+ * Le rendu est mis en cache — allouer un canvas par image coûterait
+ * soixante allocations par seconde pour un texte qui ne bouge pas.
+ */
+const titleCache = new Map();
+
 function drawTitleWord(ctx, word, cx, y, color) {
-  const off = document.createElement('canvas');
-  off.width = 384; off.height = 12;
-  const octx = off.getContext('2d');
-  drawText(octx, word, 192, 1, { color, align: 'center' });
+  const key = word + color;
+  let off = titleCache.get(key);
+  if (!off) {
+    off = document.createElement('canvas');
+    off.width = 384;
+    off.height = 12;
+    drawText(off.getContext('2d'), word, 192, 1, { color, align: 'center' });
+    titleCache.set(key, off);
+  }
   ctx.imageSmoothingEnabled = false;
   ctx.drawImage(off, 0, 0, 384, 12, cx - 384, y - 2, 768, 24);
 }
