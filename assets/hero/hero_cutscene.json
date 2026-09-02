@@ -1,0 +1,630 @@
+{
+ "frames": [
+  {
+   "filename": "hero_cutscene 0.ase",
+   "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 1.ase",
+   "frame": {
+    "x": 64,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 2.ase",
+   "frame": {
+    "x": 128,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 3.ase",
+   "frame": {
+    "x": 192,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 4.ase",
+   "frame": {
+    "x": 256,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 5.ase",
+   "frame": {
+    "x": 320,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 6.ase",
+   "frame": {
+    "x": 384,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 7.ase",
+   "frame": {
+    "x": 448,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 8.ase",
+   "frame": {
+    "x": 0,
+    "y": 80,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 9.ase",
+   "frame": {
+    "x": 64,
+    "y": 80,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 10.ase",
+   "frame": {
+    "x": 128,
+    "y": 80,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 11.ase",
+   "frame": {
+    "x": 192,
+    "y": 80,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 12.ase",
+   "frame": {
+    "x": 256,
+    "y": 80,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 13.ase",
+   "frame": {
+    "x": 320,
+    "y": 80,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 14.ase",
+   "frame": {
+    "x": 384,
+    "y": 80,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 15.ase",
+   "frame": {
+    "x": 448,
+    "y": 80,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 16.ase",
+   "frame": {
+    "x": 0,
+    "y": 160,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 17.ase",
+   "frame": {
+    "x": 64,
+    "y": 160,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 18.ase",
+   "frame": {
+    "x": 128,
+    "y": 160,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 19.ase",
+   "frame": {
+    "x": 192,
+    "y": 160,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 20.ase",
+   "frame": {
+    "x": 256,
+    "y": 160,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 21.ase",
+   "frame": {
+    "x": 320,
+    "y": 160,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 22.ase",
+   "frame": {
+    "x": 384,
+    "y": 160,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 23.ase",
+   "frame": {
+    "x": 448,
+    "y": 160,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_cutscene 24.ase",
+   "frame": {
+    "x": 0,
+    "y": 240,
+    "w": 64,
+    "h": 80
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 80
+   },
+   "sourceSize": {
+    "w": 64,
+    "h": 80
+   },
+   "duration": 120
+  }
+ ],
+ "meta": {
+  "app": "tools/gen_sprites.py (placeholder)",
+  "version": "1.0",
+  "image": "hero_cutscene.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 512,
+   "h": 320
+  },
+  "scale": "1",
+  "frameTags": [
+   {
+    "name": "hero/cs/magic/press",
+    "from": 0,
+    "to": 3,
+    "direction": "forward"
+   },
+   {
+    "name": "hero/cs/magic/receive",
+    "from": 4,
+    "to": 7,
+    "direction": "forward"
+   },
+   {
+    "name": "hero/cs/phone",
+    "from": 8,
+    "to": 9,
+    "direction": "forward"
+   },
+   {
+    "name": "hero/cs/phone_shock",
+    "from": 10,
+    "to": 13,
+    "direction": "forward"
+   },
+   {
+    "name": "hero/cs/goodbye",
+    "from": 14,
+    "to": 17,
+    "direction": "forward"
+   },
+   {
+    "name": "hero/cs/sunset_turn",
+    "from": 18,
+    "to": 21,
+    "direction": "forward"
+   },
+   {
+    "name": "hero/cs/sit_window",
+    "from": 22,
+    "to": 24,
+    "direction": "forward"
+   }
+  ],
+  "slices": [
+   {
+    "name": "pivot",
+    "color": "#0000ffff",
+    "keys": [
+     {
+      "frame": 0,
+      "bounds": {
+       "x": 0,
+       "y": 0,
+       "w": 64,
+       "h": 80
+      },
+      "pivot": {
+       "x": 32,
+       "y": 76
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

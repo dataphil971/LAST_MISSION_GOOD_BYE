@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LAST MISSION — GOOD BYE</title>
+<meta name="description" content="Une courte expérience narrative en pixel art : la dernière journée d'un Data Analyst.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23211820'/><rect x='2' y='8' width='12' height='2' fill='%23F0C94F'/><rect x='4' y='4' width='8' height='4' fill='%23F0C94F'/></svg>">
+<style>
+  :root { color-scheme: dark; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #171016;
+    overflow: hidden;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* le fond n'attire pas l'oeil : tout se joue dans les 384x216 */
+    background:
+      radial-gradient(ellipse at 50% 40%, #241A22 0%, #140F14 70%, #0E0A10 100%);
+    font: 12px/1.4 system-ui, sans-serif;
+    color: #6A5C72;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Agrandissement par facteur ENTIER uniquement, nearest-neighbour.
+     La taille exacte est fixée en JS (src/core/game.js). */
+  canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    display: block;
+    touch-action: manipulation;
+    box-shadow: 0 0 0 1px #35252A, 0 12px 40px rgba(0, 0, 0, .55);
+  }
+  noscript { padding: 2rem; text-align: center; }
+</style>
+</head>
+<body>
+  <canvas id="game" width="384" height="216" aria-label="Jeu"></canvas>
+  <noscript>Ce jeu nécessite JavaScript. Le code source reste lisible dans le dépôt.</noscript>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

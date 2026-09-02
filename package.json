@@ -1,0 +1,15 @@
+{
+  "name": "last-mission-good-bye",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Courte expérience narrative en pixel art : la dernière journée d'un Data Analyst.",
+  "scripts": {
+    "serve": "python -m http.server 8123 --bind 127.0.0.1",
+    "sprites": "python tools/gen_sprites.py",
+    "test": "node tools/smoke_test.mjs",
+    "build": "node tools/build_single.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,22 @@
+# Build derive, regenerable a tout moment
+dist/
+
+# Fichiers de travail graphiques
+*.aseprite~
+*.ase~
+
+# Systeme
+.DS_Store
+Thumbs.db
+node_modules/
+
+# Moodboard : references de travail gardees en local uniquement.
+# Certaines portent un filigrane commercial ou une licence incompatible :
+# elles ne doivent pas etre publiees. Voir docs/PIPELINE.md.
+docs/moodboard/*.jpg
+docs/moodboard/*.jpeg
+docs/moodboard/*.png
+
+# Python
+__pycache__/
+*.pyc

@@ -1,0 +1,156 @@
+// Texte du jeu, séparé de la mise en scène.
+//
+// Écrire ici, mettre en scène dans src/scenes/. Aucun nom réel de projet,
+// de système ou de collaborateur : les missions portent des noms de code
+// fictifs et les PNJ des identifiants anonymisés (docs/SECURITY.md).
+//
+// Tonalité visée : 60 % chaleureux, 25 % humour de bureau, 15 % valorisation.
+// On rit AVEC Philippe, jamais DE Philippe.
+
+export const T = {
+  title: {
+    name: 'LAST MISSION',
+    sub: 'GOOD BYE',
+    tagline: 'La dernière journée d\'un Data Analyst',
+    duration: 'environ 5 minutes',
+    start: 'JOUER',
+    fast: 'MODE RAPIDE',
+    hint: 'CLIC ou ESPACE pour avancer  ·  ÉCHAP pour le menu',
+  },
+
+  exterior: {
+    clock: '08:43',
+    day: 'DERNIER JOUR',
+    thought: '...dernière fois.',
+  },
+
+  lobby: {
+    hello_hero: 'Bonjour !',
+    hello_desk: 'Bonjour Philippe !',
+    evening_desk: 'Bonne soirée !',
+    evening_hero: 'Merci. Et bonne continuation.',
+  },
+
+  elevator: {
+    floor: 'PREMIER ÉTAGE',
+  },
+
+  floor: {
+    banner: 'ZONE DÉCOUVERTE',
+    bannerSub: 'LE PLATEAU',
+    tutor_hello: 'Alors, prêt pour ta dernière journée ?',
+    hero_reply: 'Je crois.',
+    sit_hint: 'Un vieux tableau de bord est resté ouvert sur ton écran.',
+    archive: 'ARCHIVE TROUVÉE',
+    archiveSub: 'MISSION 01',
+  },
+
+  // -- Mission 01 : ATLAS ------------------------------------------------
+  atlas: {
+    id: 'ATLAS',
+    number: 'MISSION 01',
+    title: 'Trop de choses à l\'écran',
+    goal: 'Comprendre que la BI, c\'est aussi de l\'UX.',
+    instruction: 'Clique un bloc, puis la zone où il doit aller.',
+    blocks: ['KPI', 'FILTRES', 'GRAPHIQUES', 'TABLEAU', 'NAVIGATION'],
+    wrong: 'Pas ici.',
+    solved: 'Le rapport respire enfin.',
+    bug: 'Et là, le signet ne veut plus rien savoir.',
+    heroPanic: 'Bon. J\'ai cliqué partout. Vraiment partout.',
+    npcArrive: 'T\'as essayé... ça ?',
+    afterPress: '...c\'était ça ?',
+    npcYes: 'Oui.',
+    heroCamera: 'Très bien.',
+    skillBanner: 'COMPÉTENCE DÉBLOQUÉE',
+    skillName: 'HIÉRARCHIE VISUELLE',
+    xp: '+150 XP',
+    done: 'MISSION ARCHIVÉE',
+    doneSub: 'TERMINÉE  ·  Souvenir ajouté.',
+  },
+
+  // -- Montage : le reste du stage passe en accéléré ---------------------
+  montage: {
+    banner: 'ARCHIVES DU STAGE',
+    note: 'PROTOTYPE  ·  missions 02 à 12 à produire',
+    missions: [
+      ['02', 'IRIS', 'Mais cette colonne veut dire quoi ?'],
+      ['03', 'ECHO', 'Qui est qui ?'],
+      ['04', 'LEDGER', 'Il en manque un'],
+      ['05', 'BRIDGE', 'Deux IDs entrent dans un bar...'],
+      ['06', 'VERDANT', 'Changer sans casser'],
+      ['07', 'HORIZON', 'Une étoile, mais pas dans le ciel'],
+      ['08', 'PULSE', 'Le mini-boss'],
+      ['09', 'SAFEPATH', 'Suis la donnée'],
+      ['10', 'BEACON', '48 heures'],
+      ['11', 'SENTINEL', 'L\'apprenti devient mentor'],
+      ['12', 'RELAY', 'Faire en sorte que ça continue sans moi'],
+    ],
+    end: 'MISSION 12',
+    endSub: 'TERMINÉE',
+    internship: 'STAGE',
+    internshipSub: 'TERMINÉ',
+  },
+
+  // -- Départ ------------------------------------------------------------
+  departure: {
+    apps: ['Rapports', 'Modèle', 'Pipeline', 'Messagerie'],
+    closing: 'Fermeture...',
+    path: ['BUREAU', 'PLATEAU', 'COULOIR', 'ASCENSEUR', 'RDC', 'ACCUEIL', 'EXTÉRIEUR'],
+  },
+
+  // -- Coucher de soleil : le discours ----------------------------------
+  sunset: {
+    speech: [
+      'Après plusieurs mois passés ici, cette aventure touche à sa fin.',
+      'Merci à toutes celles et ceux qui m\'ont accueilli, accompagné,'
+        + ' conseillé, fait confiance... et parfois débloqué en appuyant'
+        + ' simplement sur le bouton que je cherchais depuis quarante-cinq'
+        + ' minutes.',
+      'Je repars avec beaucoup plus que de nouvelles compétences.',
+      'J\'ai appris à regarder une donnée avant de vouloir la représenter,'
+        + ' à comprendre un besoin avant de chercher une solution,'
+        + ' à vérifier ce qui se passe derrière un graphique...'
+        + ' et surtout à ne pas rester bloqué seul quand quelqu\'un peut'
+        + ' m\'aider.',
+      'Merci pour votre disponibilité, vos conseils et tous les moments'
+        + ' partagés.',
+      'Je garderai un très bon souvenir de mon passage ici et de toutes les'
+        + ' personnes que j\'ai eu la chance de rencontrer.',
+      'Je vous souhaite à toutes et à tous une excellente continuation.',
+      'Et au plaisir de vous recroiser.',
+    ],
+    thanks: 'MERCI POUR CETTE AVENTURE.',
+  },
+
+  // -- Faux générique et quête bonus ------------------------------------
+  credits: {
+    lines: ['UN JEU D\'AU REVOIR', 'écrit, dessiné et codé', 'pour dire merci'],
+    route: 'ITINÉRAIRE VERS DOMICILE',
+    time: '2 h 03',
+    questBanner: 'QUÊTE BONUS',
+    questName: 'RENTRE CHEZ TOI',
+    questDiff: 'Difficulté : ★★★★★',
+    questDur: 'Durée estimée : 2 h 03',
+    questReward: 'Récompense : ton lit',
+    heroSilence: '...',
+    heroOk: 'Bon.',
+  },
+
+  // -- Écran final -------------------------------------------------------
+  outro: {
+    thanks: 'MERCI D\'AVOIR JOUÉ',
+    contact: 'ON GARDE CONTACT ?',
+    replay: 'REJOUER',
+    note: 'Missions, systèmes et personnes : noms fictifs ou anonymisés.',
+  },
+};
+
+// Locuteurs. Les PNJ gardent leur identifiant anonymisé comme nom affiché :
+// c'est un choix assumé, pas un oubli (doctrine de sécurité).
+export const CAST = {
+  philippe: { name: 'Philippe', color: '#F1B55F' },
+  reception: { name: 'Accueil', color: '#D2C5A6' },
+  tutor: { name: 'Tuteur · PO_01', color: '#8B8FA8' },
+  bi07: { name: 'BI_07', color: '#93A86D' },
+  narrator: { name: '', color: '#D2C5A6' },
+};
