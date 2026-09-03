@@ -84,6 +84,10 @@ node tools/build_single.mjs         # → dist/last-mission.html (~210 Ko)
 
 ### Commandes
 
+Au doigt : toucher pour avancer, toucher le sol pour se déplacer, et deux
+boutons à l'écran remplacent le clavier — le menu en haut à droite, **PASSER**
+en bas à droite pendant les cinématiques.
+
 | Touche | Effet |
 | --- | --- |
 | Clic / Espace | avancer le dialogue, valider |
@@ -118,9 +122,12 @@ Le `package.json` ne sert qu'à regrouper les scripts.
 
 ## Choix techniques
 
-- **Canvas logique 384 × 216**, agrandi par facteur entier uniquement
-  (×5 = 1920 × 1080 exactement). `imageSmoothingEnabled = false`, toutes les
-  positions dessinées sont arrondies : aucun sous-pixel.
+- **Canvas logique 384 × 216**, agrandi par facteur entier dès que le jeu
+  tient deux fois dans la fenêtre — le cas de tout écran d'ordinateur
+  (×5 = 1920 × 1080 exactement). En dessous, sur un téléphone, l'ajustement
+  se fait au plus près : un facteur minimal de 1 débordait des 384 px sur un
+  écran de 360, et le jeu se retrouvait coupé. `imageSmoothingEnabled = false`,
+  toutes les positions dessinées sont arrondies : aucun sous-pixel.
 - **Décors peints en pixels, personnages en sprites.** Les fonds sont générés
   proceduralement et de façon déterministe (hash sur les coordonnées) : zéro
   octet d'assets de décor, aucun scintillement entre deux images.

@@ -20,6 +20,10 @@ const PAUSE = {
   rows: [110, 130, 150, 170],
 };
 
+// Equivalents tactiles des touches ECHAP et TAB, affiches seulement au doigt.
+const MENU_BTN = { x: 366, y: 4, w: 14, h: 14 };
+const SKIP_BTN = { x: 318, y: 198, w: 62, h: 14 };
+
 export class Scene {
   constructor(game) { this.game = game; }
   enter() {}
@@ -65,18 +69,35 @@ export class Game {
     this.skippable = null;  // callback de saut de cinematique, ou null
 
     addEventListener('resize', () => this.resize());
+    addEventListener('orientationchange', () => setTimeout(() => this.resize(), 120));
+    if (window.visualViewport) {
+      visualViewport.addEventListener('resize', () => this.resize());
+    }
     this.resize();
   }
 
   // -- affichage --------------------------------------------------------
+  /**
+   * Agrandissement. Facteur ENTIER dès que le jeu tient au moins deux fois
+   * dans la fenêtre — la règle de la Bible d'art, et le cas de tous les
+   * écrans d'ordinateur.
+   *
+   * En dessous, sur un téléphone, on ajuste au plus près. Imposer un
+   * facteur minimal de 1 débordait des 384 px du canvas sur un écran de
+   * 360 px : le jeu se retrouvait coupé, et un rendu net mais tronqué ne se
+   * joue pas. Le voisinage le plus proche reste net à facteur
+   * fractionnaire ; seule la taille des pixels devient irrégulière.
+   */
   resize() {
-    const pad = 0;
-    const sx = (innerWidth - pad) / this.W;
-    const sy = (innerHeight - pad) / this.H;
-    const scale = Math.max(1, Math.min(CONFIG.maxScale, Math.floor(Math.min(sx, sy))));
-    this.view.scale = scale;
-    this.canvas.style.width = this.W * scale + 'px';
-    this.canvas.style.height = this.H * scale + 'px';
+    const fit = Math.min(innerWidth / this.W, innerHeight / this.H);
+    const scale = fit >= 2 ? Math.min(CONFIG.maxScale, Math.floor(fit)) : fit;
+    const w = Math.max(1, Math.round(this.W * scale));
+    const h = Math.max(1, Math.round(this.H * scale));
+    this.canvas.style.width = w + 'px';
+    this.canvas.style.height = h + 'px';
+    // le facteur réel, arrondi compris : c'est lui qui convertit les
+    // coordonnées de pointeur en pixels logiques
+    this.view.scale = w / this.W;
   }
 
   // -- scenes -----------------------------------------------------------
@@ -168,6 +189,24 @@ export class Game {
     if (this.pending) return;
 
     if (this.input.justPressed('menu')) this.paused = !this.paused;
+
+    // Sans clavier, ni le menu ni le saut ne seraient atteignables : au
+    // doigt, deux zones tactiles les remplacent.
+    if (this.input.isTouch && !this.paused) {
+      if (this.input.clickIn(MENU_BTN.x, MENU_BTN.y, MENU_BTN.w, MENU_BTN.h)) {
+        this.paused = true;
+        this.audio.sfx('select');
+        return;
+      }
+      if (this.skippable
+        && this.input.clickIn(SKIP_BTN.x, SKIP_BTN.y, SKIP_BTN.w, SKIP_BTN.h)) {
+        const jump = this.skippable;
+        this.skippable = null;
+        jump();
+        return;
+      }
+    }
+
     if (this.paused) { this.updatePause(); return; }
 
     // TAB saute la cinematique en cours quand la scene l autorise
@@ -218,6 +257,7 @@ export class Game {
     if (this.toasts) this.toasts.draw(ctx);
 
     if (this.skippable && !this.paused) this.drawSkipHint(ctx);
+    if (this.input.isTouch && !this.paused) this.drawMenuButton(ctx);
     if (this.paused) this.drawPause(ctx);
 
     if (this.fade.alpha > 0) {
@@ -234,6 +274,12 @@ export class Game {
   }
 
   drawSkipHint(ctx) {
+    if (this.input.isTouch) {
+      panel(ctx, SKIP_BTN.x, SKIP_BTN.y, SKIP_BTN.w, SKIP_BTN.h);
+      drawText(ctx, 'PASSER ▶', SKIP_BTN.x + SKIP_BTN.w / 2, SKIP_BTN.y + 4,
+        { color: C.text_muted, align: 'center' });
+      return;
+    }
     const label = 'TAB  passer';
     const w = textWidth(label) + 8;
     ctx.globalAlpha = 0.75;
@@ -241,6 +287,16 @@ export class Game {
     ctx.fillRect(this.W - w - 4, this.H - 13, w, 10);
     ctx.globalAlpha = 1;
     drawText(ctx, label, this.W - w, this.H - 11, { color: C.text_muted });
+  }
+
+  /** Petit bouton de menu, en haut a droite, au doigt uniquement. */
+  drawMenuButton(ctx) {
+    const b = MENU_BTN;
+    ctx.globalAlpha = 0.8;
+    panel(ctx, b.x, b.y, b.w, b.h);
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = C.text_muted;
+    for (let i = 0; i < 3; i++) ctx.fillRect(b.x + 4, b.y + 4 + i * 3, 6, 1);
   }
 
   drawPause(ctx) {
@@ -251,7 +307,13 @@ export class Game {
     panel(ctx, PAUSE.x, PAUSE.y, PAUSE.w, PAUSE.h);
     drawText(ctx, 'PAUSE', 192, PAUSE.y + 8,
       { color: C.accent_orange, align: 'center' });
-    const lines = [
+    const lines = this.input.isTouch ? [
+      'TOUCHER  avancer',
+      'TOUCHER au sol  se déplacer',
+      'PASSER  sauter une scène',
+      '',
+      "Écran à l'horizontale : plus grand.",
+    ] : [
       'CLIC / ESPACE  avancer',
       'ESPACE maintenu  accélérer',
       'TAB  passer une scène',

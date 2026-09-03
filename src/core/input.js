@@ -25,6 +25,7 @@ export class Input {
     this.click = null;                // {x, y} consomme par les scenes
     this.clickHandled = false;
     this.anyInput = false;            // sert au deverrouillage audio
+    this.isTouch = false;             // bascule au premier toucher
 
     addEventListener('keydown', (e) => {
       const a = ACTION_KEYS[e.code];
@@ -62,6 +63,7 @@ export class Input {
       this.anyInput = true;
     });
     canvas.addEventListener('touchstart', (e) => {
+      this.isTouch = true;
       const t = e.changedTouches[0];
       const p = toLogical(t.clientX, t.clientY);
       this.mouse.x = p.x; this.mouse.y = p.y; this.mouse.inside = true;
@@ -82,18 +84,28 @@ export class Input {
     return c;
   }
 
-  /** Le clic tombe-t-il dans ce rectangle logique ? */
+  /**
+   * Le clic tombe-t-il dans ce rectangle logique ?
+   * Au doigt, la zone est elargie de quelques pixels : un bouton de 16 px
+   * de haut est plus fin qu un doigt, et rater sa cible se lit comme un
+   * bouton qui ne repond pas.
+   */
   clickIn(x, y, w, h) {
     if (!this.click) return false;
+    const pad = this.isTouch ? 4 : 0;
     const c = this.click;
-    if (c.x >= x && c.x < x + w && c.y >= y && c.y < y + h) {
+    if (c.x >= x - pad && c.x < x + w + pad
+      && c.y >= y - pad && c.y < y + h + pad) {
       this.click = null;
       return true;
     }
     return false;
   }
 
+  /** Survol : sans souris, il n existe pas — sinon le dernier bouton
+      touche resterait allume indefiniment. */
   hoverIn(x, y, w, h) {
+    if (this.isTouch) return false;
     const m = this.mouse;
     return m.inside && m.x >= x && m.x < x + w && m.y >= y && m.y < y + h;
   }

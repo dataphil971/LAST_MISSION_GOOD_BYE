@@ -146,8 +146,25 @@ const embed = `<title>Last Mission — Good Bye</title>
     touch-action: manipulation;
     box-shadow: 0 0 0 1px #35252A, 0 12px 40px rgba(0, 0, 0, .55);
   }
+  /* En portrait sur un telephone, le jeu tient en largeur mais reste une
+     bande etroite : on suggere la rotation plutot que de l imposer. */
+  .rotate {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 14px;
+    margin: 0;
+    text-align: center;
+    font: 12px/1.4 system-ui, sans-serif;
+    color: #6A5C72;
+    display: none;
+  }
+  @media (orientation: portrait) and (max-width: 760px) {
+    .rotate { display: block; }
+  }
 </style>
 <canvas id="game" width="384" height="216" aria-label="Jeu"></canvas>
+<p class="rotate">Tourne ton téléphone pour agrandir l'image.</p>
 <script type="module">
 ${bundle}
 </script>
