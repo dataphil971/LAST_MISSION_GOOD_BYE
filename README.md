@@ -12,6 +12,28 @@ la personne qui l'a écrit.
 
 ![Écran-titre](docs/screens/01-titre.png)
 
+## Où jouer
+
+| | Lien | Pour qui |
+| --- | --- | --- |
+| **Aperçu privé** | https://claude.ai/code/artifact/22cff97f-9289-4112-a685-f77279de036c | moi seul, sauf partage explicite |
+| **GitHub Pages** | https://dataphil971.github.io/LAST_MISSION_GOOD_BYE/ | tout le monde — *à activer* |
+| **Hors ligne** | `dist/last-mission.html` | à joindre à un message |
+
+⚠️ **L'aperçu privé est privé.** Envoyé tel quel, il ne s'ouvrira pas chez le
+destinataire : il faut d'abord le partager depuis le menu de partage de la
+page. C'est un lien de relecture, pas un lien de diffusion.
+
+**Le lien de diffusion, c'est GitHub Pages.** Il faut l'activer une fois :
+*Settings → Pages → Source : GitHub Actions*. Le workflow
+(`.github/workflows/pages.yml`) est déjà en place et rejoue le parcours
+complet avant chaque publication. Tant que Pages n'est pas activé, le job
+échoue et l'URL ci-dessus renvoie une 404.
+
+Pour retrouver l'aperçu privé plus tard : `/artifacts` dans le terminal
+Claude Code (`o` ouvre, `c` copie le lien), <kbd>Ctrl</kbd>+<kbd>]</kbd> pour
+rouvrir le dernier, ou la galerie sur claude.ai/code/artifacts.
+
 ## État : prototype jouable (tranche verticale)
 
 Ce dépôt contient une **tranche verticale complète** — l'expérience va du
@@ -44,17 +66,17 @@ revient au lieu d'embarquer le joueur dans la suite de la journée.
 | ![Bilan de stage](docs/screens/08-bilan.png) | ![Coucher de soleil](docs/screens/10-coucher-de-soleil.png) |
 | ![Générique](docs/screens/11-generique.png) | ![Contacts](docs/screens/13-contacts.png) |
 
-## Lancer le jeu
+## Lancer le jeu en local
 
-Les modules ES et `fetch()` imposent un serveur : ouvrir `index.html` par
-double-clic ne fonctionnera pas.
+Les modules ES imposent un serveur : ouvrir `index.html` par double-clic ne
+fonctionnera pas.
 
 ```bash
 python -m http.server 8123          # puis http://127.0.0.1:8123
 ```
 
-Pour une version **qui s'ouvre depuis le disque** (à joindre à un message,
-à archiver) :
+Le build mono-fichier, lui, s'ouvre depuis le disque — aucun serveur, aucun
+appel réseau, tout est embarqué :
 
 ```bash
 node tools/build_single.mjs         # → dist/last-mission.html (~210 Ko)
