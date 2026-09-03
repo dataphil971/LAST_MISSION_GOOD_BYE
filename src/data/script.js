@@ -125,11 +125,12 @@ export const T = {
       'Merci à toutes celles et ceux qui m\'ont accueilli, accompagné,'
         + ' conseillé et fait confiance.',
       'Je repars avec beaucoup plus que de nouvelles compétences.',
-      'J\'ai appris à regarder une donnée avant de vouloir la représenter,'
-        + ' à comprendre un besoin avant de chercher une solution,'
-        + ' à vérifier ce qui se passe derrière un graphique...'
-        + ' et surtout à ne pas rester bloqué seul quand quelqu\'un peut'
-        + ' m\'aider.',
+      'J\'ai appris à observer la donnée avant de vouloir la représenter,'
+        + ' à comprendre le besoin avant de chercher une solution, et à'
+        + ' regarder ce qui se cache derrière un graphique plutôt que de'
+        + ' m\'arrêter à ce qu\'il affiche.',
+      'Mais surtout, j\'ai appris qu\'avancer, c\'est aussi savoir demander'
+        + ' de l\'aide plutôt que de rester bloqué seul face à un problème.',
       'Merci pour votre disponibilité, vos conseils et tous les moments'
         + ' partagés.',
       'Je garderai un très bon souvenir de mon passage ici et de toutes les'

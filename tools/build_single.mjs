@@ -103,3 +103,41 @@ writeFileSync(out, html, 'utf8');
 console.log('→ dist/last-mission.html',
   (Buffer.byteLength(html) / 1024).toFixed(0) + ' Ko',
   '(' + modules.length + ' modules, ' + ASSETS.length + ' assets inlinés)');
+
+// -- variante pour hébergement en page partagée -------------------------
+// L'hôte fournit lui-même <!doctype>, <head> et <body> : on ne livre que
+// le titre, le style, le canvas et le script. Même bundle, même assets.
+const embed = `<title>Last Mission — Good Bye</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(ellipse at 50% 40%, #241A22 0%, #140F14 70%, #0E0A10 100%);
+    color: #6A5C72;
+    font: 12px/1.4 system-ui, sans-serif;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Agrandissement par facteur entier, nearest-neighbour : la taille exacte
+     est fixée en JS (src/core/game.js). */
+  canvas {
+    image-rendering: pixelated;
+    display: block;
+    touch-action: manipulation;
+    box-shadow: 0 0 0 1px #35252A, 0 12px 40px rgba(0, 0, 0, .55);
+  }
+</style>
+<canvas id="game" width="384" height="216" aria-label="Jeu"></canvas>
+<script type="module">
+${bundle}
+</script>
+`;
+const embedPath = join(ROOT, 'dist', 'artifact.html');
+writeFileSync(embedPath, embed, 'utf8');
+console.log('→ dist/artifact.html   ',
+  (Buffer.byteLength(embed) / 1024).toFixed(0) + ' Ko (variante page partagée)');
