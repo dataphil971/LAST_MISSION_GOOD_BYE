@@ -196,12 +196,12 @@ def _eyes(c, x0, y, kind, spacing):
 
 
 def _helmet_logo(c, cx, top):
-    """Marque du casque : losange sombre, P orange, 7x6 px.
+    """Marque du casque : losange sombre, C orange, 7x6 px.
 
-    A cette echelle, une lettre se construit pixel par pixel. Le P exige
-    quatre rangees utiles -- barre haute, flancs, fermeture de la boucle,
-    puis la hampe qui descend -- sinon il se lit comme un O ou un C. Le
-    losange fait donc six rangees et garde partout une bordure d un pixel.
+    A cette echelle, une lettre se construit pixel par pixel. Le losange
+    fait six rangees, ce qui laisse quatre rangees utiles a la lettre et
+    garde partout une bordure d un pixel autour d elle. Le C occupe les
+    quatre : barre haute, deux rangees de montant, barre basse.
     """
     c.rect(cx - 1, top, cx + 1, top, "logo_dark")
     c.rect(cx - 2, top + 1, cx + 2, top + 1, "logo_dark")
@@ -210,11 +210,10 @@ def _helmet_logo(c, cx, top):
     c.rect(cx - 2, top + 4, cx + 2, top + 4, "logo_dark")
     c.rect(cx - 1, top + 5, cx + 1, top + 5, "logo_dark")
 
-    c.rect(cx - 1, top + 1, cx + 1, top + 1, "logo_orange")  # haut de la boucle
-    c.set(cx - 1, top + 2, "logo_orange")                     # hampe
-    c.set(cx + 1, top + 2, "logo_orange")                     # flanc droit
-    c.rect(cx - 1, top + 3, cx + 1, top + 3, "logo_orange")   # fermeture
-    c.set(cx - 1, top + 4, "logo_orange")                     # la hampe descend
+    c.rect(cx - 1, top + 1, cx + 1, top + 1, "logo_orange")   # barre haute
+    c.set(cx - 1, top + 2, "logo_orange")                      # montant
+    c.set(cx - 1, top + 3, "logo_orange")
+    c.rect(cx - 1, top + 4, cx + 1, top + 4, "logo_orange")    # barre basse
 
 
 def _helmet_front(c, cx, top, sk, tilt, logo=True):

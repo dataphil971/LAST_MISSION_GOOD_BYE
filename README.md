@@ -145,13 +145,15 @@ de rendre le jeu et de faire de la QA visuelle en ligne de commande.
 ## Sécurité et anonymisation
 
 Le dépôt ne contient **aucun** nom de projet interne, table, hostname,
-identifiant de rapport, URL interne ni environnement. Le losange au P sur le
-casque est un monogramme personnel, pas une marque d'entreprise : rien
-n'identifie l'employeur.
+identifiant de rapport, URL interne ni environnement.
 
-Une exception : **le générique de fin nomme des personnes réelles**
-(`T.credits.roles` dans `src/data/script.js`). Leur accord est à obtenir avant
-diffusion — c'est le premier point de la checklist de publication.
+Deux exceptions assumées, toutes deux documentées :
+
+- **le logo sur le casque** identifie l'employeur — c'est la signature du
+  personnage, et l'exception s'arrête au logo ;
+- **le générique de fin nomme des personnes réelles**
+  (`T.credits.roles` dans `src/data/script.js`). Leur accord est à obtenir
+  avant diffusion — c'est le premier point de la checklist de publication.
 Les douze missions portent des noms de code fictifs (ATLAS, IRIS, ECHO…), les
 PNJ des identifiants anonymisés (`BI_07`, `PO_01`), et les données affichées
 sont inventées. La règle complète et la checklist avant publication sont dans
