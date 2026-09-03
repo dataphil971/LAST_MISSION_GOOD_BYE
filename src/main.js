@@ -41,7 +41,9 @@ async function boot() {
     game.assets = { hero, heroCs, npc };
   } catch (err) {
     console.error(err);
-    splash('Assets introuvables — lancer un serveur local.', true);
+    // le message réel, pas une supposition : c'est ce qui rend un échec
+    // de chargement diagnosticable chez quelqu'un d'autre
+    splash(String(err && err.message ? err.message : err), true);
     return;
   }
 

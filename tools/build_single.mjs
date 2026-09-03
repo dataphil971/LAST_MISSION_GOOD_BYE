@@ -58,15 +58,30 @@ function dataUri(relPath) {
   return `data:${mime};base64,${buf.toString('base64')}`;
 }
 
-const ASSETS = [
-  'assets/hero/hero_gameplay.png', 'assets/hero/hero_gameplay.json',
-  'assets/hero/hero_cutscene.png', 'assets/hero/hero_cutscene.json',
-  'assets/npc/npc_office.png', 'assets/npc/npc_office.json',
+// Les images passent en data: (une balise <img> les accepte partout).
+// Les métadonnées, elles, sont injectées comme objets JS : une page hébergée
+// en bac à sable peut refuser fetch(), y compris sur une URL data:.
+const IMAGES = [
+  'assets/hero/hero_gameplay.png',
+  'assets/hero/hero_cutscene.png',
+  'assets/npc/npc_office.png',
+];
+const METADATA = [
+  'assets/hero/hero_gameplay.json',
+  'assets/hero/hero_cutscene.json',
+  'assets/npc/npc_office.json',
 ];
 
 // -- assemblage --------------------------------------------------------
 const modules = listModules('src');
+const inlineMeta = Object.fromEntries(
+  METADATA.map((m) => [m, JSON.parse(readFileSync(join(ROOT, m), 'utf8'))]),
+);
+
 let bundle = `
+// Métadonnées des atlas, injectées sans aucun appel réseau.
+globalThis.__ATLAS_INLINE = ${JSON.stringify(inlineMeta)};
+
 // Chargeur de modules minimal (le dépôt utilise de vrais modules ES ;
 // ce build inline sert uniquement à l'ouverture depuis le disque).
 const __reg = {};
@@ -90,7 +105,7 @@ for (const id of modules) {
 let main = readFileSync(join(ROOT, 'src/main.js'), 'utf8')
   .replace(/^import\s*\{([^}]+)\}\s*from\s*'([^']+)';?\s*$/gm,
     (_, names, spec) => `const {${names}} = __req('${resolve('src/main.js', spec)}');`);
-for (const a of ASSETS) main = main.split(`'${a}'`).join(`'${dataUri(a)}'`);
+for (const a of IMAGES) main = main.split(`'${a}'`).join(`'${dataUri(a)}'`);
 bundle += '\n\n' + main;
 
 const html = readFileSync(join(ROOT, 'index.html'), 'utf8')
@@ -102,7 +117,7 @@ const out = join(ROOT, 'dist', 'last-mission.html');
 writeFileSync(out, html, 'utf8');
 console.log('→ dist/last-mission.html',
   (Buffer.byteLength(html) / 1024).toFixed(0) + ' Ko',
-  '(' + modules.length + ' modules, ' + ASSETS.length + ' assets inlinés)');
+  '(' + modules.length + ' modules, ' + IMAGES.length + ' images, ' + METADATA.length + ' métadonnées)');
 
 // -- variante pour hébergement en page partagée -------------------------
 // L'hôte fournit lui-même <!doctype>, <head> et <body> : on ne livre que

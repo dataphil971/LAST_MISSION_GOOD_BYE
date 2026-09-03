@@ -19,17 +19,23 @@ export class Atlas {
   }
 
   static async load(pngUrl, jsonUrl) {
+    // Les builds mono-fichier déposent les métadonnées ici plutôt que de
+    // les faire charger par le réseau : une page hébergée en bac à sable
+    // peut refuser fetch(), y compris sur une URL data:.
+    const inlined = globalThis.__ATLAS_INLINE;
     const [image, data] = await Promise.all([
       new Promise((resolve, reject) => {
         const img = new Image();
         img.onload = () => resolve(img);
-        img.onerror = () => reject(new Error('Image introuvable : ' + pngUrl));
+        img.onerror = () => reject(new Error('Image illisible : ' + pngUrl));
         img.src = pngUrl;
       }),
-      fetch(jsonUrl).then((r) => {
-        if (!r.ok) throw new Error('JSON introuvable : ' + jsonUrl);
-        return r.json();
-      }),
+      inlined && inlined[jsonUrl]
+        ? Promise.resolve(inlined[jsonUrl])
+        : fetch(jsonUrl).then((r) => {
+          if (!r.ok) throw new Error('JSON introuvable : ' + jsonUrl);
+          return r.json();
+        }),
     ]);
     return new Atlas(image, data);
   }
