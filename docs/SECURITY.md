@@ -5,27 +5,15 @@ publié et partagé. **Aucun élément permettant d'identifier l'entreprise, ses
 systèmes ou ses collaborateurs ne doit se retrouver dans le dépôt ni dans le
 build distribué.**
 
-## Exception assumée : la marque sur le casque
+## La marque du casque
 
-Le casque du héros porte le logo de l'entreprise (losange sombre, C orange).
-**L'employeur est donc identifiable**, ce qui sort du principe d'anonymat
-total posé par le rapport de conception. C'est un choix délibéré : le jeu est
-un message d'au revoir adressé à des collègues, et le casque est la signature
-du personnage.
+Le casque porte un **losange sombre avec un P orange** : un monogramme
+personnel, pas un logo d'entreprise. C'est délibéré. Il donne au casque une
+identité de marque sans rien révéler de l'employeur, et il reste lisible à
+1× — ce qui, à sept pixels de large, était la vraie contrainte.
 
-Cette exception est **strictement limitée au logo**. Tout le reste du document
-reste applicable : aucun projet, système, table, environnement, donnée ni
-collaborateur identifiable. Un lecteur extérieur doit pouvoir deviner
-l'entreprise, jamais son fonctionnement interne ni les personnes qui y
-travaillent.
-
-Deux conséquences pratiques :
-
-- l'usage reste un usage personnel de remerciement, pas une communication au
-  nom de l'entreprise — le jeu ne doit rien affirmer en son nom ;
-- si l'entreprise demande le retrait de sa marque, un seul endroit est à
-  modifier : `_helmet_logo()` dans `tools/rig.py`, puis régénérer les
-  spritesheets.
+Le dessin tient en un seul endroit : `_helmet_logo()` dans `tools/rig.py`.
+Le modifier demande de régénérer les spritesheets.
 
 ## Interdits absolus
 

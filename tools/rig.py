@@ -196,23 +196,25 @@ def _eyes(c, x0, y, kind, spacing):
 
 
 def _helmet_logo(c, cx, top):
-    """Marque du casque : losange sombre, C orange, 7x5 px.
+    """Marque du casque : losange sombre, P orange, 7x6 px.
 
-    A cette echelle, un logo doit etre construit pixel par pixel : les deux
-    barres et le montant gauche du C sont ce qui le rend lisible a 1x. Le
-    losange garde une bordure d au moins un pixel sur chaque rangee.
+    A cette echelle, une lettre se construit pixel par pixel. Le P exige
+    quatre rangees utiles -- barre haute, flancs, fermeture de la boucle,
+    puis la hampe qui descend -- sinon il se lit comme un O ou un C. Le
+    losange fait donc six rangees et garde partout une bordure d un pixel.
     """
-    # Le losange descend vers le bord du casque : place tout en haut du dome,
-    # sa pointe se confondrait avec la silhouette.
-    y = top + 1
-    c.rect(cx - 1, y, cx + 1, y, "logo_dark")
-    c.rect(cx - 2, y + 1, cx + 2, y + 1, "logo_dark")
-    c.rect(cx - 3, y + 2, cx + 3, y + 2, "logo_dark")
-    c.rect(cx - 2, y + 3, cx + 2, y + 3, "logo_dark")
-    c.rect(cx - 1, y + 4, cx + 1, y + 4, "logo_dark")
-    c.rect(cx - 1, y + 1, cx + 1, y + 1, "logo_orange")   # barre haute du C
-    c.set(cx - 1, y + 2, "logo_orange")                    # montant gauche
-    c.rect(cx - 1, y + 3, cx + 1, y + 3, "logo_orange")    # barre basse
+    c.rect(cx - 1, top, cx + 1, top, "logo_dark")
+    c.rect(cx - 2, top + 1, cx + 2, top + 1, "logo_dark")
+    c.rect(cx - 3, top + 2, cx + 3, top + 2, "logo_dark")
+    c.rect(cx - 3, top + 3, cx + 3, top + 3, "logo_dark")
+    c.rect(cx - 2, top + 4, cx + 2, top + 4, "logo_dark")
+    c.rect(cx - 1, top + 5, cx + 1, top + 5, "logo_dark")
+
+    c.rect(cx - 1, top + 1, cx + 1, top + 1, "logo_orange")  # haut de la boucle
+    c.set(cx - 1, top + 2, "logo_orange")                     # hampe
+    c.set(cx + 1, top + 2, "logo_orange")                     # flanc droit
+    c.rect(cx - 1, top + 3, cx + 1, top + 3, "logo_orange")   # fermeture
+    c.set(cx - 1, top + 4, "logo_orange")                     # la hampe descend
 
 
 def _helmet_front(c, cx, top, sk, tilt, logo=True):

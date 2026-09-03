@@ -116,10 +116,10 @@ de rendre le jeu et de faire de la QA visuelle en ligne de commande.
 
 ## Sécurité et anonymisation
 
-Le casque du héros porte le logo de l'entreprise : l'employeur est
-identifiable, c'est une exception assumée et documentée. En dehors de ça, le
-dépôt ne contient **aucun** nom de projet interne, table, hostname,
+Le dépôt ne contient **aucun** nom de projet interne, table, hostname,
 identifiant de rapport, URL interne, environnement ni nom de collaborateur.
+Le losange au P sur le casque est un monogramme personnel, pas une marque
+d'entreprise : rien n'identifie l'employeur.
 Les douze missions portent des noms de code fictifs (ATLAS, IRIS, ECHO…), les
 PNJ des identifiants anonymisés (`BI_07`, `PO_01`), et les données affichées
 sont inventées. La règle complète et la checklist avant publication sont dans
