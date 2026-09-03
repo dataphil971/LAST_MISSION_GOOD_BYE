@@ -17,18 +17,19 @@ la personne qui l'a écrit.
 | | Lien | Pour qui |
 | --- | --- | --- |
 | **Aperçu privé** | https://claude.ai/code/artifact/22cff97f-9289-4112-a685-f77279de036c | moi seul, sauf partage explicite |
-| **GitHub Pages** | https://dataphil971.github.io/LAST_MISSION_GOOD_BYE/ | tout le monde — *à activer* |
+| **GitHub Pages** | https://dataphil971.github.io/LAST_MISSION_GOOD_BYE/ | tout le monde — publié par le workflow |
 | **Hors ligne** | `dist/last-mission.html` | à joindre à un message |
 
 ⚠️ **L'aperçu privé est privé.** Envoyé tel quel, il ne s'ouvrira pas chez le
 destinataire : il faut d'abord le partager depuis le menu de partage de la
 page. C'est un lien de relecture, pas un lien de diffusion.
 
-**Le lien de diffusion, c'est GitHub Pages.** Il faut l'activer une fois :
-*Settings → Pages → Source : GitHub Actions*. Le workflow
-(`.github/workflows/pages.yml`) est déjà en place et rejoue le parcours
-complet avant chaque publication. Tant que Pages n'est pas activé, le job
-échoue et l'URL ci-dessus renvoie une 404.
+**Le lien de diffusion, c'est GitHub Pages.** Le workflow
+(`.github/workflows/pages.yml`) rejoue le parcours complet, puis publie à
+chaque push sur `main` ; il active Pages lui-même au premier passage
+(`configure-pages` avec `enablement: true`), aucun réglage manuel n'est
+nécessaire. L'URL ci-dessus renvoie une 404 tant que le premier déploiement
+n'est pas passé au vert — à vérifier dans l'onglet *Actions*.
 
 Pour retrouver l'aperçu privé plus tard : `/artifacts` dans le terminal
 Claude Code (`o` ouvre, `c` copie le lien), <kbd>Ctrl</kbd>+<kbd>]</kbd> pour
