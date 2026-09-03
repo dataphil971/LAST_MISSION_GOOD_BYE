@@ -64,9 +64,23 @@ export class OutroScene extends Scene {
     if (g.input.clickIn(REPLAY.x, REPLAY.y, REPLAY.w, REPLAY.h)) g.restart();
   }
 
+  /**
+   * Ouvre un lien de contact. Dans une page hébergée en bac à sable, la
+   * navigation sortante peut être refusée sans lever d'erreur : on affiche
+   * alors l'adresse en clair plutôt que de laisser un bouton inerte.
+   */
   open(url) {
-    if (url.startsWith('mailto:')) { window.location.href = url; return; }
-    window.open(url, '_blank', 'noopener,noreferrer');
+    try {
+      if (url.startsWith('mailto:')) {
+        window.location.href = url;
+        return;
+      }
+      const win = window.open(url, '_blank', 'noopener,noreferrer');
+      if (!win) throw new Error('navigation refusée');
+    } catch (err) {
+      this.blocked = url.replace(/^mailto:/, '').split('?')[0];
+      this.game.toasts.push('Lien bloqué ici', C.error, 2.6);
+    }
   }
 
   draw(ctx) {
@@ -101,8 +115,14 @@ export class OutroScene extends Scene {
     drawText(ctx, T.outro.replay, REPLAY.x + REPLAY.w / 2, REPLAY.y + 4,
       { color: C.text_muted, align: 'center' });
 
-    drawText(ctx, T.outro.note, 192, 8,
-      { color: '#6A5C72', align: 'center' });
+    if (this.blocked) {
+      // le lien n'a pas pu s'ouvrir : au moins qu'il soit lisible
+      drawText(ctx, this.blocked, 192, 184,
+        { color: C.text_muted, align: 'center', shadow: C.outline_deep });
+    } else {
+      drawText(ctx, T.outro.note, 192, 8,
+        { color: '#6A5C72', align: 'center' });
+    }
     ctx.globalAlpha = 1;
   }
 }
