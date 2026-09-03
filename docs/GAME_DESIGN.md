@@ -102,6 +102,22 @@ réaction de Philippe après le succès.
   soleil. Le but du jeu est que le message soit lu : mieux vaut un collègue
   pressé qui va droit au discours qu'un collègue qui ferme l'onglet.
 
+## L'écran de bilan
+
+À la fin du montage, une carte récapitule le stage — statistiques absurdes
+révélées une à une, puis la chute : `RÉCOMPENSE : +1 Data Analyst`. Elle
+arrive après « STAGE ▸ TERMINÉ » et avant le départ du bureau.
+
+C'est le seul endroit où le jeu se permet un ton purement « jeu vidéo », et
+c'est voulu : il ponctue les douze missions avant que le récit ne redevienne
+sérieux pour la scène de départ. Le contenu est dans `T.recap`
+(`src/data/script.js`) — les lignes se modifient sans toucher au code.
+
+La jauge à cafés et les yeux utilisent deux glyphes ajoutés à la police
+bitmap : `█` (bloc plein, l'espacement d'un pixel entre glyphes donne une
+jauge segmentée) et un glyphe de sept colonnes pour la paire d'yeux, la
+police n'ayant évidemment pas de couverture emoji.
+
 ## Reste à produire
 
 1. **Sprites Aseprite** en remplacement des placeholders (voir PIPELINE.md).

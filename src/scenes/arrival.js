@@ -47,10 +47,12 @@ export class ExteriorScene extends Scene {
       this.walker.enabled = true;
       return;
     }
-    // arrivée : il traverse le cadre, le bâtiment le domine
-    yield wait(0.4);
-    yield this.hero.walkTo(150, { walk: 'bagWalk', idle: 'bagIdle', audio: g.audio });
-    yield wait(0.5);
+    // Arrivée : il traverse le cadre, le bâtiment le domine. On entre vite
+    // dans le mouvement — une ouverture qui traîne se paie tout de suite.
+    yield wait(0.25);
+    yield this.hero.walkTo(146,
+      { walk: 'bagWalk', idle: 'bagIdle', audio: g.audio, speed: 44 });
+    yield wait(0.45);
     this.walker.enabled = true;
   }
 

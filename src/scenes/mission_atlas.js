@@ -125,6 +125,8 @@ export class MissionAtlasScene extends Scene {
     yield wait(0.7);
     this.hero.play('error', 6, true);
     g.audio.sfx('error');
+    // le casque saute, la réplique tombe : c'est le pic de la panique
+    yield g.dlg.say('philippe', T.atlas.heroDoh, { style: 'center', hold: 1.1 });
     yield g.dlg.say('philippe', T.atlas.heroPanic);
 
     // le collègue arrive. Silence.

@@ -1319,6 +1319,182 @@
     "h": 64
    },
    "duration": 120
+  },
+  {
+   "filename": "npc_office 60.ase",
+   "frame": {
+    "x": 192,
+    "y": 448,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 61.ase",
+   "frame": {
+    "x": 240,
+    "y": 448,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 62.ase",
+   "frame": {
+    "x": 288,
+    "y": 448,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 63.ase",
+   "frame": {
+    "x": 336,
+    "y": 448,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 64.ase",
+   "frame": {
+    "x": 0,
+    "y": 512,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 65.ase",
+   "frame": {
+    "x": 48,
+    "y": 512,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 66.ase",
+   "frame": {
+    "x": 96,
+    "y": 512,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 67.ase",
+   "frame": {
+    "x": 144,
+    "y": 512,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
   }
  ],
  "meta": {
@@ -1328,7 +1504,7 @@
   "format": "RGBA8888",
   "size": {
    "w": 384,
-   "h": 512
+   "h": 576
   },
   "scale": "1",
   "frameTags": [
@@ -1347,109 +1523,109 @@
    {
     "name": "npc/reception/walk",
     "from": 4,
-    "to": 9,
-    "direction": "forward"
-   },
-   {
-    "name": "npc/reception/talk",
-    "from": 10,
     "to": 11,
     "direction": "forward"
    },
    {
-    "name": "npc/reception/press",
+    "name": "npc/reception/talk",
     "from": 12,
-    "to": 14,
+    "to": 13,
     "direction": "forward"
    },
    {
-    "name": "npc/tutor/idle",
-    "from": 15,
+    "name": "npc/reception/press",
+    "from": 14,
     "to": 16,
     "direction": "forward"
    },
    {
-    "name": "npc/tutor/idle_side",
+    "name": "npc/tutor/idle",
     "from": 17,
     "to": 18,
     "direction": "forward"
    },
    {
-    "name": "npc/tutor/walk",
+    "name": "npc/tutor/idle_side",
     "from": 19,
-    "to": 24,
+    "to": 20,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/tutor/walk",
+    "from": 21,
+    "to": 28,
     "direction": "forward"
    },
    {
     "name": "npc/tutor/talk",
-    "from": 25,
-    "to": 26,
+    "from": 29,
+    "to": 30,
     "direction": "forward"
    },
    {
     "name": "npc/tutor/press",
-    "from": 27,
-    "to": 29,
-    "direction": "forward"
-   },
-   {
-    "name": "npc/bi07/idle",
-    "from": 30,
-    "to": 31,
-    "direction": "forward"
-   },
-   {
-    "name": "npc/bi07/idle_side",
-    "from": 32,
+    "from": 31,
     "to": 33,
     "direction": "forward"
    },
    {
-    "name": "npc/bi07/walk",
+    "name": "npc/bi07/idle",
     "from": 34,
-    "to": 39,
+    "to": 35,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi07/idle_side",
+    "from": 36,
+    "to": 37,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi07/walk",
+    "from": 38,
+    "to": 45,
     "direction": "forward"
    },
    {
     "name": "npc/bi07/talk",
-    "from": 40,
-    "to": 41,
+    "from": 46,
+    "to": 47,
     "direction": "forward"
    },
    {
     "name": "npc/bi07/press",
-    "from": 42,
-    "to": 44,
+    "from": 48,
+    "to": 50,
     "direction": "forward"
    },
    {
     "name": "npc/peer/idle",
-    "from": 45,
-    "to": 46,
+    "from": 51,
+    "to": 52,
     "direction": "forward"
    },
    {
     "name": "npc/peer/idle_side",
-    "from": 47,
-    "to": 48,
-    "direction": "forward"
-   },
-   {
-    "name": "npc/peer/walk",
-    "from": 49,
+    "from": 53,
     "to": 54,
     "direction": "forward"
    },
    {
-    "name": "npc/peer/talk",
+    "name": "npc/peer/walk",
     "from": 55,
-    "to": 56,
+    "to": 62,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/peer/talk",
+    "from": 63,
+    "to": 64,
     "direction": "forward"
    },
    {
     "name": "npc/peer/press",
-    "from": 57,
-    "to": 59,
+    "from": 65,
+    "to": 67,
     "direction": "forward"
    }
   ],

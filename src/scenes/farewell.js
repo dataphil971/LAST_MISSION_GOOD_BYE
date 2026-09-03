@@ -82,12 +82,19 @@ export class DepartureScene extends Scene {
     this.hero.draw(ctx);
 
     if (this.closing >= 0 && this.screen !== 'off') {
-      panel(ctx, 120, 40, 144, 52);
-      drawText(ctx, T.departure.closing, 192, 46,
+      // huit applications : le panneau se dimensionne sur la liste
+      // panneau calé à gauche : Philippe et son écran restent visibles
+      const n = T.departure.apps.length;
+      const h = 22 + n * 9;
+      const y = 112 - Math.floor(h / 2);
+      const x = 30;
+      const w = 150;
+      panel(ctx, x, y, w, h);
+      drawText(ctx, T.departure.closing, x + w / 2, y + 6,
         { color: C.text_muted, align: 'center' });
       T.departure.apps.forEach((app, i) => {
         const gone = i < this.closing;
-        drawText(ctx, (gone ? '·  ' : '▶  ') + app, 136, 58 + i * 8,
+        drawText(ctx, (gone ? '·  ' : '▶  ') + app, x + 16, y + 18 + i * 9,
           { color: gone ? '#4A3F55' : C.text_cream });
       });
     }

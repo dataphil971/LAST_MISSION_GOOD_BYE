@@ -57,6 +57,8 @@ export const T = {
     wrong: 'Pas ici.',
     solved: 'Le rapport respire enfin.',
     bug: 'Et là, le signet ne veut plus rien savoir.',
+    // Clin d'oeil au doublage français des Simpson : Homer dit « Oh pinaise ! »
+    heroDoh: 'Oh pinaise !',
     heroPanic: 'Bon. J\'ai cliqué partout. Vraiment partout.',
     npcArrive: 'T\'as essayé... ça ?',
     afterPress: '...c\'était ça ?',
@@ -92,9 +94,26 @@ export const T = {
     internshipSub: 'TERMINÉ',
   },
 
+  // -- Écran de bilan, à la fin du stage --------------------------------
+  recap: {
+    title: 'STAGE CDS — COMPLETED',
+    stats: [
+      ['Data analysée', 'beaucoup trop'],
+      ['Bugs résolus', 'on ne compte plus'],
+      ['Power BI', '+100 XP'],
+      ['Cafés', '████████████ 99+'],
+      ['Collègues sollicités', '👀'],
+      ['Survie au stage', '100 %'],
+    ],
+    reward: 'RÉCOMPENSE : +1 Data Analyst',
+    hint: 'CLIC pour continuer',
+  },
+
   // -- Départ ------------------------------------------------------------
   departure: {
-    apps: ['Rapports', 'Modèle', 'Pipeline', 'Messagerie'],
+    // Produits du commerce, jamais un nom d'instance ou d'environnement.
+    apps: ['Azure DevOps', 'Power BI', 'IntelliJ', 'OneNote',
+      'Databricks', 'la VM', 'Outlook', 'Teams'],
     closing: 'Fermeture...',
     path: ['BUREAU', 'PLATEAU', 'COULOIR', 'ASCENSEUR', 'RDC', 'ACCUEIL', 'EXTÉRIEUR'],
   },

@@ -66,10 +66,10 @@ export class Actor {
           return true;
         }
         a.face(Math.sign(d));
-        a.play(walkKey, opts.fps || 10, true);
+        a.play(walkKey, opts.fps || 12, true);
         a.x += Math.sign(d) * speed * dt;
         stepTimer -= dt;
-        if (audio && stepTimer <= 0) { audio.sfx('step'); stepTimer = 0.28; }
+        if (audio && stepTimer <= 0) { audio.sfx('step'); stepTimer = 0.34; }
         return false;
       },
     };

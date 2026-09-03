@@ -1165,6 +1165,94 @@
     "h": 64
    },
    "duration": 120
+  },
+  {
+   "filename": "hero_gameplay 53.ase",
+   "frame": {
+    "x": 240,
+    "y": 384,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_gameplay 54.ase",
+   "frame": {
+    "x": 288,
+    "y": 384,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_gameplay 55.ase",
+   "frame": {
+    "x": 336,
+    "y": 384,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "hero_gameplay 56.ase",
+   "frame": {
+    "x": 0,
+    "y": 448,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
   }
  ],
  "meta": {
@@ -1174,7 +1262,7 @@
   "format": "RGBA8888",
   "size": {
    "w": 384,
-   "h": 448
+   "h": 512
   },
   "scale": "1",
   "frameTags": [
@@ -1199,79 +1287,79 @@
    {
     "name": "hero/gp/walk/side",
     "from": 10,
-    "to": 15,
+    "to": 17,
     "direction": "forward"
    },
    {
     "name": "hero/gp/walk/front",
-    "from": 16,
-    "to": 19,
+    "from": 18,
+    "to": 21,
     "direction": "forward"
    },
    {
     "name": "hero/gp/walk/back",
-    "from": 20,
-    "to": 23,
-    "direction": "forward"
-   },
-   {
-    "name": "hero/gp/sit",
-    "from": 24,
+    "from": 22,
     "to": 25,
     "direction": "forward"
    },
    {
-    "name": "hero/gp/type",
+    "name": "hero/gp/sit",
     "from": 26,
-    "to": 29,
+    "to": 27,
     "direction": "forward"
    },
    {
-    "name": "hero/gp/think",
-    "from": 30,
+    "name": "hero/gp/type",
+    "from": 28,
     "to": 31,
     "direction": "forward"
    },
    {
-    "name": "hero/gp/confused",
+    "name": "hero/gp/think",
     "from": 32,
     "to": 33,
     "direction": "forward"
    },
    {
-    "name": "hero/gp/error",
+    "name": "hero/gp/confused",
     "from": 34,
     "to": 35,
     "direction": "forward"
    },
    {
-    "name": "hero/gp/adjust_helmet",
+    "name": "hero/gp/error",
     "from": 36,
-    "to": 38,
+    "to": 37,
+    "direction": "forward"
+   },
+   {
+    "name": "hero/gp/adjust_helmet",
+    "from": 38,
+    "to": 40,
     "direction": "forward"
    },
    {
     "name": "hero/gp/wave",
-    "from": 39,
-    "to": 42,
-    "direction": "forward"
-   },
-   {
-    "name": "hero/gp/point",
-    "from": 43,
+    "from": 41,
     "to": 44,
     "direction": "forward"
    },
    {
-    "name": "hero/gp/backpack/idle",
+    "name": "hero/gp/point",
     "from": 45,
     "to": 46,
     "direction": "forward"
    },
    {
-    "name": "hero/gp/backpack/walk",
+    "name": "hero/gp/backpack/idle",
     "from": 47,
-    "to": 52,
+    "to": 48,
+    "direction": "forward"
+   },
+   {
+    "name": "hero/gp/backpack/walk",
+    "from": 49,
+    "to": 56,
     "direction": "forward"
    }
   ],

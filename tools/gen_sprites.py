@@ -25,6 +25,11 @@ import rig  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COLS = 8
 
+# Ecart des jambes, pose par pose : le cycle complet fait 8 temps et ne
+# progresse jamais de plus d un pixel. Partage par le heros et les PNJ.
+WALK_SWING = [(-2, 2), (-1, 1), (0, 0), (1, -1),
+              (2, -2), (1, -1), (0, 0), (-1, 1)]
+
 
 # --------------------------------------------------------------------------
 # Cycles d animation : chaque entree renvoie la liste des poses d un tag.
@@ -37,17 +42,19 @@ def hero_tags(cell_w, cell_h, base_y, cx):
         kw.setdefault("cx", cx)
         return rig.pose(**kw)
 
-    # marche : 6 temps, les jambes s ecartent, le buste monte de 1 px
+    # Marche : 8 temps, jamais plus d un pixel d ecart entre deux poses.
+    # A cette echelle, un saut de 2 px se voit immediatement et donne une
+    # demarche sautillante. Le buste ne monte d un pixel qu au passage,
+    # quand les deux jambes se croisent -- comme dans un vrai cycle.
     walk = []
-    swing = [(-2, 2), (-1, 1), (0, 0), (2, -2), (1, -1), (0, 0)]
-    for i, (a, b) in enumerate(swing):
+    for a, b in WALK_SWING:
         walk.append(p(view="side", leg_a=a, leg_b=b, arm_front=-a,
-                      bob=-1 if i in (1, 4) else 0))
+                      bob=-1 if a == 0 else 0))
 
     walk_front = []
-    for i, (a, b) in enumerate([(-1, 1), (0, 0), (1, -1), (0, 0)]):
+    for a, b in [(-1, 1), (0, 0), (1, -1), (0, 0)]:
         walk_front.append(p(view="front", leg_a=a, leg_b=b, arm_front=b,
-                            arm_back=a, bob=-1 if i in (0, 2) else 0))
+                            arm_back=a, bob=-1 if a == 0 else 0))
 
     return {
         # -- locomotion -------------------------------------------------
@@ -92,8 +99,8 @@ def hero_tags(cell_w, cell_h, base_y, cx):
                                   p(view="side", backpack=True, bob=-1)],
         "hero/gp/backpack/walk": [
             p(view="side", backpack=True, leg_a=a, leg_b=b, arm_front=-a,
-              bob=-1 if i in (1, 4) else 0)
-            for i, (a, b) in enumerate(swing)
+              bob=-1 if a == 0 else 0)
+            for a, b in WALK_SWING
         ],
     }
 
@@ -160,9 +167,8 @@ def npc_tags(base_y, cx):
         tags["npc/%s/idle_side" % name] = [p(view="side"), p(view="side", bob=-1)]
         tags["npc/%s/walk" % name] = [
             p(view="side", leg_a=a, leg_b=b, arm_front=-a,
-              bob=-1 if i in (1, 4) else 0)
-            for i, (a, b) in enumerate([(-2, 2), (-1, 1), (0, 0),
-                                        (2, -2), (1, -1), (0, 0)])
+              bob=-1 if a == 0 else 0)
+            for a, b in WALK_SWING
         ]
         tags["npc/%s/talk" % name] = [p(view="front"),
                                       p(view="front", eyes="closed")]

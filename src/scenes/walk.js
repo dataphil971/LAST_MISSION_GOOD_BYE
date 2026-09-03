@@ -50,10 +50,10 @@ export class Walker {
     if (dir !== 0) {
       this.hint = 0;
       a.face(dir);
-      a.play(this.walkKey, 10, true);
+      a.play(this.walkKey, 12, true);
       a.x = Math.max(this.min, Math.min(this.max, a.x + dir * a.speed * dt));
       this.stepTimer -= dt;
-      if (this.stepTimer <= 0) { this.game.audio.sfx('step'); this.stepTimer = 0.3; }
+      if (this.stepTimer <= 0) { this.game.audio.sfx('step'); this.stepTimer = 0.34; }
     } else {
       a.play(this.idleKey, 6, true);
       this.hint += dt;

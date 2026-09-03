@@ -16,6 +16,8 @@ export class MontageScene extends Scene {
   enter() {
     this.t = 0;
     this.shown = 0;
+    this.recap = -1;          // nombre de lignes de bilan déjà révélées
+    this.reward = false;
     this.game.audio.play('mission');
     this.game.skippable = () => this.finish();
   }
@@ -35,6 +37,21 @@ export class MontageScene extends Scene {
     g.audio.play(null);
     yield g.dlg.banner(T.montage.internship, T.montage.internshipSub, 2.2,
       C.accent_orange);
+
+    // Bilan de fin de stage : les lignes tombent une à une, la récompense
+    // arrive en dernier — c'est la chute.
+    this.recap = 0;
+    yield wait(0.4);
+    for (let i = 0; i < T.recap.stats.length; i++) {
+      this.recap = i + 1;
+      g.audio.sfx('select');
+      yield wait(g.fastMode ? 0.22 : 0.42);
+    }
+    yield wait(0.5);
+    this.reward = true;
+    g.audio.sfx('xp');
+    yield wait(g.fastMode ? 0.8 : 1.6);
+    yield g.dlg.say('narrator', T.recap.hint, { style: 'thought' });
     this.finish();
   }
 
@@ -73,6 +90,42 @@ export class MontageScene extends Scene {
         drawText(ctx, appearing ? '▶' : '·', 332, y + 4,
           { color: C.success, align: 'right' });
       }
+    }
+
+    if (this.recap >= 0) this.drawRecap(ctx);
+  }
+
+  /** Carte de bilan, posée par-dessus la liste assombrie. */
+  drawRecap(ctx) {
+    ctx.globalAlpha = 0.82;
+    ctx.fillStyle = C.ui_shadow;
+    ctx.fillRect(0, 0, 384, 216);
+    ctx.globalAlpha = 1;
+
+    const x = 56;
+    const y = 30;
+    const w = 272;
+    const h = 156;
+    panel(ctx, x, y, w, h, { border: C.accent_orange });
+    drawText(ctx, T.recap.title, 192, y + 10,
+      { color: C.accent_orange, align: 'center' });
+    ctx.fillStyle = C.ui_border;
+    ctx.fillRect(x + 12, y + 24, w - 24, 1);
+
+    T.recap.stats.forEach(([label, value], i) => {
+      if (i >= this.recap) return;
+      const ly = y + 34 + i * 13;
+      drawText(ctx, label, x + 16, ly, { color: C.text_muted });
+      // le compteur de cafés est une jauge : on le met en avant
+      const color = label === 'Cafés' ? C.sunset_gold : C.text_cream;
+      drawText(ctx, value, x + w - 16, ly, { color, align: 'right' });
+    });
+
+    if (this.reward) {
+      ctx.fillStyle = C.ui_border;
+      ctx.fillRect(x + 12, y + h - 26, w - 24, 1);
+      drawText(ctx, T.recap.reward, 192, y + h - 18,
+        { color: C.success, align: 'center' });
     }
   }
 }
