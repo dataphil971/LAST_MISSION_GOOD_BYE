@@ -142,11 +142,20 @@ export const T = {
 
   // -- Faux générique et quête bonus ------------------------------------
   credits: {
-    lines: ['UN JEU D\'AU REVOIR', 'écrit, dessiné et codé', 'pour dire merci'],
+    title: 'UN JEU D\'AU REVOIR',
+    // ATTENTION : ces deux lignes nomment des personnes réelles.
+    // Leur accord est requis avant toute diffusion (docs/SECURITY.md).
+    roles: [
+      ['RÉALISATION', 'PHILIPPE ROUMBO'],
+      ['TUTEUR', 'MARIN WYATT'],
+      ['MANAGER', 'AMAURY'],
+      ['AVEC', 'LES ÉQUIPES BI ET DATA ENG'],
+    ],
+    footer: 'écrit, dessiné et codé pour dire merci',
     route: 'ITINÉRAIRE VERS DOMICILE',
     time: '2 h 03',
     questBanner: 'QUÊTE BONUS',
-    questName: 'RENTRE CHEZ TOI',
+    questName: 'RENTRER CHEZ MOI',
     questDiff: 'Difficulté : ★★★★★',
     questDur: 'Durée estimée : 2 h 03',
     questReward: 'Récompense : mon lit',

@@ -36,7 +36,7 @@ d'au revoir et aux contacts, pour les gens pressés.
 | | |
 | --- | --- |
 | ![Extérieur](docs/screens/02-exterieur.png) | ![Mission Atlas](docs/screens/05-mission-atlas.png) |
-| ![Coucher de soleil](docs/screens/08-coucher-de-soleil.png) | ![Contacts](docs/screens/10-contacts.png) |
+| ![Coucher de soleil](docs/screens/08-coucher-de-soleil.png) | ![Contacts](docs/screens/11-contacts.png) |
 
 ## Lancer le jeu
 
@@ -62,7 +62,7 @@ node tools/build_single.mjs         # → dist/last-mission.html (~210 Ko)
 | Espace maintenu | accélérer la frappe du texte |
 | ← → (ou A/D, Q/D) | marcher |
 | Tab | passer la cinématique en cours |
-| Échap | menu (son, rythme) |
+| Échap | menu : son, rythme, **retour à l'accueil**, reprendre |
 | M | couper le son |
 | F1 | affichage de debug |
 
@@ -117,9 +117,13 @@ de rendre le jeu et de faire de la QA visuelle en ligne de commande.
 ## Sécurité et anonymisation
 
 Le dépôt ne contient **aucun** nom de projet interne, table, hostname,
-identifiant de rapport, URL interne, environnement ni nom de collaborateur.
-Le losange au P sur le casque est un monogramme personnel, pas une marque
-d'entreprise : rien n'identifie l'employeur.
+identifiant de rapport, URL interne ni environnement. Le losange au P sur le
+casque est un monogramme personnel, pas une marque d'entreprise : rien
+n'identifie l'employeur.
+
+Une exception : **le générique de fin nomme des personnes réelles**
+(`T.credits.roles` dans `src/data/script.js`). Leur accord est à obtenir avant
+diffusion — c'est le premier point de la checklist de publication.
 Les douze missions portent des noms de code fictifs (ATLAS, IRIS, ECHO…), les
 PNJ des identifiants anonymisés (`BI_07`, `PO_01`), et les données affichées
 sont inventées. La règle complète et la checklist avant publication sont dans

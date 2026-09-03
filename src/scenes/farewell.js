@@ -174,7 +174,8 @@ export class CreditsScene extends Scene {
 
   * script() {
     const g = this.game;
-    yield wait(g.fastMode ? 1.6 : 3.0);
+    // un peu plus long qu'avant : il y a maintenant quelque chose à lire
+    yield wait(g.fastMode ? 2.4 : 4.6);
 
     // retour brutal
     this.phase = 'street';
@@ -208,12 +209,21 @@ export class CreditsScene extends Scene {
 
   draw(ctx) {
     if (this.phase === 'credits') {
+      // Vrai générique : fonction à gauche, nom à droite, aligné sur deux
+      // colonnes. C'est ce qui le distingue d'une simple liste de noms.
       ctx.fillStyle = '#0E0A10';
       ctx.fillRect(0, 0, 384, 216);
-      T.credits.lines.forEach((l, i) => {
-        drawText(ctx, l, 192, 92 + i * 14,
-          { color: i === 0 ? C.text_cream : C.text_muted, align: 'center' });
+      drawText(ctx, T.credits.title, 192, 52,
+        { color: C.sunset_gold, align: 'center' });
+      ctx.fillStyle = C.ui_border;
+      ctx.fillRect(96, 66, 192, 1);
+      T.credits.roles.forEach(([label, name], i) => {
+        const y = 82 + i * 15;
+        drawText(ctx, label, 72, y, { color: C.text_muted });
+        drawText(ctx, name, 312, y, { color: C.text_cream, align: 'right' });
       });
+      drawText(ctx, T.credits.footer, 192, 156,
+        { color: '#6A5C72', align: 'center' });
       return;
     }
 

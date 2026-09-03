@@ -91,6 +91,9 @@ profils publics et adresse e-mail. Deux règles :
 - [ ] `src/config.js` : les quatre liens de contact ouvrent bien la bonne
       page, et l'adresse e-mail est celle qu'on gardera après le départ.
 - [ ] Le build distribué (`dist/`) est régénéré depuis la version relue.
+- [ ] **Le générique nomme des personnes réelles** (`T.credits.roles` dans
+      `src/data/script.js`) : accord explicite de chacune obtenu avant
+      diffusion, sinon remplacer par une fonction sans nom.
 - [ ] Personne identifiable dans un sprite ou un dialogue ? Accord obtenu.
 
 En cas de fuite déjà commitée, réécrire l'historique ne suffit pas si le dépôt

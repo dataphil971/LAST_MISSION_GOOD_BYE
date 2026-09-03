@@ -50,11 +50,12 @@ const SHOTS = [
   ['lobby', 2.6, '03-accueil.png'],
   ['floor', 2.2, '04-plateau.png'],
   ['missionAtlas', 3.0, '05-mission-atlas.png'],
-  ['montage', 4.0, '06-montage.png'],
-  ['departure', 2.0, '07-depart.png'],
+  ['montage', 14.0, '06-bilan.png'],
+  ['departure', 3.0, '07-depart.png'],
   ['sunset', 3.0, '08-coucher-de-soleil.png'],
-  ['credits', 6.0, '09-2h03.png'],
-  ['outro', 4.0, '10-contacts.png'],
+  ['credits', 2.0, '09-generique.png'],
+  ['credits', 11.0, '10-2h03.png'],
+  ['outro', 9.0, '11-contacts.png'],
 ];
 
 async function run() {

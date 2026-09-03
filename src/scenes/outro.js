@@ -61,11 +61,7 @@ export class OutroScene extends Scene {
       g.audio.sfx('confirm');
       this.open(c.url);
     }
-    if (g.input.clickIn(REPLAY.x, REPLAY.y, REPLAY.w, REPLAY.h)) {
-      g.audio.sfx('select');
-      g.state = { xp: 0, skills: [], missions: [], magicButton: 0, flags: {} };
-      g.go('title');
-    }
+    if (g.input.clickIn(REPLAY.x, REPLAY.y, REPLAY.w, REPLAY.h)) g.restart();
   }
 
   open(url) {

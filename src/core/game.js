@@ -13,6 +13,13 @@ import { Timeline } from './timeline.js';
 import { drawText, textWidth } from './font.js';
 import { C } from '../data/palette.js';
 
+// Menu de pause. Une seule source pour la position des boutons : le rendu
+// et la détection du clic ne peuvent pas diverger.
+const PAUSE = {
+  x: 112, y: 40, w: 160, h: 152, bw: 136,
+  rows: [110, 130, 150, 170],
+};
+
 export class Scene {
   constructor(game) { this.game = game; }
   enter() {}
@@ -163,16 +170,26 @@ export class Game {
     if (this.toasts) this.toasts.update(dt);
   }
 
+  /** Repart de l'écran-titre, progression remise à zéro. */
+  restart() {
+    this.paused = false;
+    this.state = { xp: 0, skills: [], missions: [], magicButton: 0, flags: {} };
+    this.skippable = null;
+    if (this.dlg) this.dlg.clear();
+    this.audio.sfx('select');
+    this.go('title');
+  }
+
   updatePause() {
     const i = this.input;
-    if (i.clickIn(140, 118, 104, 14) || i.justPressed('mute')) {
-      this.audio.toggleMute();
-    }
-    if (i.clickIn(140, 136, 104, 14)) {
+    const hit = (row) => i.clickIn(PAUSE.x + 12, PAUSE.rows[row], PAUSE.bw, 14);
+    if (hit(0) || i.justPressed('mute')) this.audio.toggleMute();
+    if (hit(1)) {
       this.fastMode = !this.fastMode;
       this.audio.sfx('select');
     }
-    if (i.clickIn(140, 154, 104, 14)) {
+    if (hit(2)) this.restart();
+    if (hit(3)) {
       this.paused = false;
       this.audio.sfx('select');
     }
@@ -218,19 +235,29 @@ export class Game {
     ctx.fillStyle = C.ui_shadow;
     ctx.fillRect(0, 0, this.W, this.H);
     ctx.globalAlpha = 1;
-    panel(ctx, 116, 60, 152, 116);
-    drawText(ctx, 'PAUSE', 192, 70, { color: C.accent_orange, align: 'center' });
+    panel(ctx, PAUSE.x, PAUSE.y, PAUSE.w, PAUSE.h);
+    drawText(ctx, 'PAUSE', 192, PAUSE.y + 8,
+      { color: C.accent_orange, align: 'center' });
     const lines = [
       'CLIC / ESPACE  avancer',
-      'ESPACE maintenu  accelerer',
-      'TAB  passer une scene',
+      'ESPACE maintenu  accélérer',
+      'TAB  passer une scène',
       'M  couper le son',
-      'ECHAP  ce menu',
+      'ÉCHAP  ce menu',
     ];
-    lines.forEach((l, i) => drawText(ctx, l, 128, 84 + i * 8, { color: C.text_muted }));
-    button(ctx, 140, 118, 104, 14, this.audio.muted ? 'SON : COUPE' : 'SON : ACTIF');
-    button(ctx, 140, 136, 104, 14, this.fastMode ? 'RYTHME : RAPIDE' : 'RYTHME : NORMAL');
-    button(ctx, 140, 154, 104, 14, 'REPRENDRE');
+    lines.forEach((l, i) => drawText(ctx, l, PAUSE.x + 12, PAUSE.y + 24 + i * 9,
+      { color: C.text_muted }));
+
+    const labels = [
+      this.audio.muted ? 'SON : COUPÉ' : 'SON : ACTIF',
+      this.fastMode ? 'RYTHME : RAPIDE' : 'RYTHME : NORMAL',
+      'RETOUR À L\'ACCUEIL',
+      'REPRENDRE',
+    ];
+    PAUSE.rows.forEach((y, i) => {
+      const hover = this.input.hoverIn(PAUSE.x + 12, y, PAUSE.bw, 14);
+      button(ctx, PAUSE.x + 12, y, PAUSE.bw, 14, labels[i], hover);
+    });
   }
 }
 
