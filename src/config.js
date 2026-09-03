@@ -8,13 +8,15 @@
 
 export const CONFIG = {
   // -- Contacts de l ecran final -------------------------------------
-  // Remplacer LINKEDIN_URL avant diffusion : c est le seul champ manquant.
+  // Seules donnees personnelles du depot : profils publics et adresse
+  // durable. Une carte dont l URL se termine par _URL s affiche
+  // « a completer » et reste inactive (voir contactReady plus bas).
   contacts: [
     {
       id: 'linkedin',
       label: 'LINKEDIN',
       sub: 'Garder contact',
-      url: 'LINKEDIN_URL',
+      url: 'https://www.linkedin.com/in/philippe-roumbo-69b42a2ab/',
       accent: 'accent_orange',
     },
     {
@@ -35,7 +37,7 @@ export const CONFIG = {
       id: 'email',
       label: 'E-MAIL',
       sub: "M'écrire",
-      url: 'mailto:roumbophilippe1@gmail.com'
+      url: 'mailto:roumbop@gmail.com'
         + '?subject=' + encodeURIComponent("À propos de ton jeu d'au revoir"),
       accent: 'sunset_gold',
     },

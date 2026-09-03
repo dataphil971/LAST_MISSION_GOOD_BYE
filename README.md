@@ -25,8 +25,13 @@ premier écran jusqu'aux liens de contact, sans trou :
 | Quitter | fermeture des applications, trajet inverse, coucher de soleil, discours | jouable |
 | Post-générique | « 2 h 03 de trajet », écran de contact | jouable |
 
-Ce qui reste à produire est listé dans [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) :
-les onze autres missions, les vrais sprites Aseprite, et l'URL LinkedIn.
+Les quatre liens de contact sont fonctionnels. Ce qui reste à produire est
+listé dans [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) : les onze autres
+missions et les vrais sprites Aseprite.
+
+L'écran-titre propose trois entrées : **JOUER**, **MODE RAPIDE**, et
+**ALLER À LA FIN** — qui saute directement au coucher de soleil, au message
+d'au revoir et aux contacts, pour les gens pressés.
 
 | | |
 | --- | --- |
@@ -111,7 +116,9 @@ de rendre le jeu et de faire de la QA visuelle en ligne de commande.
 
 ## Sécurité et anonymisation
 
-Le dépôt ne contient **aucun** nom de projet interne, table, hostname,
+Le casque du héros porte le logo de l'entreprise : l'employeur est
+identifiable, c'est une exception assumée et documentée. En dehors de ça, le
+dépôt ne contient **aucun** nom de projet interne, table, hostname,
 identifiant de rapport, URL interne, environnement ni nom de collaborateur.
 Les douze missions portent des noms de code fictifs (ATLAS, IRIS, ECHO…), les
 PNJ des identifiants anonymisés (`BI_07`, `PO_01`), et les données affichées

@@ -5,6 +5,28 @@ publié et partagé. **Aucun élément permettant d'identifier l'entreprise, ses
 systèmes ou ses collaborateurs ne doit se retrouver dans le dépôt ni dans le
 build distribué.**
 
+## Exception assumée : la marque sur le casque
+
+Le casque du héros porte le logo de l'entreprise (losange sombre, C orange).
+**L'employeur est donc identifiable**, ce qui sort du principe d'anonymat
+total posé par le rapport de conception. C'est un choix délibéré : le jeu est
+un message d'au revoir adressé à des collègues, et le casque est la signature
+du personnage.
+
+Cette exception est **strictement limitée au logo**. Tout le reste du document
+reste applicable : aucun projet, système, table, environnement, donnée ni
+collaborateur identifiable. Un lecteur extérieur doit pouvoir deviner
+l'entreprise, jamais son fonctionnement interne ni les personnes qui y
+travaillent.
+
+Deux conséquences pratiques :
+
+- l'usage reste un usage personnel de remerciement, pas une communication au
+  nom de l'entreprise — le jeu ne doit rien affirmer en son nom ;
+- si l'entreprise demande le retrait de sa marque, un seul endroit est à
+  modifier : `_helmet_logo()` dans `tools/rig.py`, puis régénérer les
+  spritesheets.
+
 ## Interdits absolus
 
 Ni dans le code, ni dans les assets, ni dans les commits, ni dans les captures :
@@ -78,7 +100,8 @@ profils publics et adresse e-mail. Deux règles :
 - [ ] `docs/screens/` : aucune capture ne montre de donnée réelle.
 - [ ] `docs/moodboard/` : aucune image sous filigrane ou sous licence
       incompatible n'est intégrée au jeu.
-- [ ] `src/config.js` : `LINKEDIN_URL` remplacé, adresse e-mail correcte.
+- [ ] `src/config.js` : les quatre liens de contact ouvrent bien la bonne
+      page, et l'adresse e-mail est celle qu'on gardera après le départ.
 - [ ] Le build distribué (`dist/`) est régénéré depuis la version relue.
 - [ ] Personne identifiable dans un sprite ou un dialogue ? Accord obtenu.
 

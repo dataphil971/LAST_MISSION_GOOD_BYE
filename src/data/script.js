@@ -15,6 +15,7 @@ export const T = {
     duration: 'environ 5 minutes',
     start: 'JOUER',
     fast: 'MODE RAPIDE',
+    end: 'ALLER À LA FIN',
     hint: 'CLIC ou ESPACE pour avancer  ·  ÉCHAP pour le menu',
   },
 
@@ -103,9 +104,7 @@ export const T = {
     speech: [
       'Après plusieurs mois passés ici, cette aventure touche à sa fin.',
       'Merci à toutes celles et ceux qui m\'ont accueilli, accompagné,'
-        + ' conseillé, fait confiance... et parfois débloqué en appuyant'
-        + ' simplement sur le bouton que je cherchais depuis quarante-cinq'
-        + ' minutes.',
+        + ' conseillé et fait confiance.',
       'Je repars avec beaucoup plus que de nouvelles compétences.',
       'J\'ai appris à regarder une donnée avant de vouloir la représenter,'
         + ' à comprendre un besoin avant de chercher une solution,'
@@ -131,7 +130,7 @@ export const T = {
     questName: 'RENTRE CHEZ TOI',
     questDiff: 'Difficulté : ★★★★★',
     questDur: 'Durée estimée : 2 h 03',
-    questReward: 'Récompense : ton lit',
+    questReward: 'Récompense : mon lit',
     heroSilence: '...',
     heroOk: 'Bon.',
   },

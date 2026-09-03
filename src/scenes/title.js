@@ -9,10 +9,16 @@ import { T } from '../data/script.js';
 import { drawSunset } from './backdrops.js';
 import { makeHero } from './cast.js';
 
+// Trois entrées possibles. « Aller à la fin » existe pour les gens pressés :
+// mieux vaut qu'un collègue lise le message d'au revoir tout de suite que
+// pas du tout.
+const BTN = { x: 128, w: 128, h: 16 };
+const ROWS = [144, 164, 184];
+
 export class TitleScene extends Scene {
   enter() {
     this.t = 0;
-    this.hero = makeHero(this.game, { x: 92, y: 196, flip: false });
+    this.hero = makeHero(this.game, { x: 78, y: 196, flip: false });
     this.hero.play('bagIdle', 4, true);
     this.game.audio.play('sunset');
   }
@@ -22,8 +28,9 @@ export class TitleScene extends Scene {
     this.hero.update(dt);
     const i = this.game.input;
 
-    if (i.clickIn(136, 150, 112, 16)) this.start(false);
-    else if (i.clickIn(136, 170, 112, 16)) this.start(true);
+    if (i.clickIn(BTN.x, ROWS[0], BTN.w, BTN.h)) this.start(false);
+    else if (i.clickIn(BTN.x, ROWS[1], BTN.w, BTN.h)) this.start(true);
+    else if (i.clickIn(BTN.x, ROWS[2], BTN.w, BTN.h)) this.skipToEnd();
     else if (i.justPressed('advance')) this.start(this.game.fastMode);
   }
 
@@ -31,6 +38,16 @@ export class TitleScene extends Scene {
     this.game.fastMode = fast;
     this.game.audio.sfx('confirm');
     this.game.go('exterior');
+  }
+
+  /** Saut direct au coucher de soleil : le discours, puis les contacts. */
+  skipToEnd() {
+    const g = this.game;
+    g.audio.sfx('confirm');
+    // la mission Atlas est comptee comme vue : l ecran final reste coherent
+    g.completeMission('ATLAS');
+    g.state.magicButton = 1;
+    g.go('sunset');
   }
 
   draw(ctx) {
@@ -51,17 +68,19 @@ export class TitleScene extends Scene {
     drawText(ctx, T.title.tagline, 192, 82,
       { color: C.text_muted, align: 'center' });
 
-    panel(ctx, 128, 118, 128, 22);
-    drawText(ctx, T.title.duration, 192, 126,
+    panel(ctx, 128, 118, 128, 20);
+    drawText(ctx, T.title.duration, 192, 124,
       { color: C.text_muted, align: 'center' });
 
-    const hoverPlay = this.game.input.hoverIn(136, 150, 112, 16);
-    const hoverFast = this.game.input.hoverIn(136, 170, 112, 16);
-    button(ctx, 136, 150, 112, 16, T.title.start, hoverPlay);
-    button(ctx, 136, 170, 112, 16, T.title.fast, hoverFast || this.game.fastMode);
+    const labels = [T.title.start, T.title.fast, T.title.end];
+    const active = [false, this.game.fastMode, false];
+    ROWS.forEach((y, i) => {
+      const hover = this.game.input.hoverIn(BTN.x, y, BTN.w, BTN.h);
+      button(ctx, BTN.x, y, BTN.w, BTN.h, labels[i], hover || active[i]);
+    });
 
     if (Math.floor(this.t * 1.5) % 2 === 0) {
-      drawText(ctx, T.title.hint, 192, 200,
+      drawText(ctx, T.title.hint, 192, 206,
         { color: C.text_muted, align: 'center', shadow: C.outline_deep });
     }
   }

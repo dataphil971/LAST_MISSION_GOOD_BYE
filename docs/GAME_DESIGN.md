@@ -98,17 +98,19 @@ réaction de Philippe après le succès.
 - L'écran-titre annonce la durée (« environ 5 minutes »). Un collègue doit
   savoir dans quoi il s'engage avant de cliquer, pas après.
 - Deux rythmes : normal (7–9 min à terme) et rapide (4–5 min).
+- Une troisième entrée, **ALLER À LA FIN**, saute directement au coucher de
+  soleil. Le but du jeu est que le message soit lu : mieux vaut un collègue
+  pressé qui va droit au discours qu'un collègue qui ferme l'onglet.
 
 ## Reste à produire
 
-1. **URL LinkedIn** dans `src/config.js` — seul champ manquant pour diffuser.
-2. **Sprites Aseprite** en remplacement des placeholders (voir PIPELINE.md).
+1. **Sprites Aseprite** en remplacement des placeholders (voir PIPELINE.md).
    La pose « assis près de la fenêtre, casque posé à côté » mérite un vrai
    dessin : c'est le dernier plan du jeu.
-3. **Missions 02 → 12.** Chaque mission est une scène autonome ; `mission_atlas.js`
+2. **Missions 02 → 12.** Chaque mission est une scène autonome ; `mission_atlas.js`
    sert de gabarit (intro → gimmick → récompense → retour au présent).
-4. **Pause déjeuner** : le rapport insiste — aucune compétence, aucun KPI,
+3. **Pause déjeuner** : le rapport insiste — aucune compétence, aucun KPI,
    juste des conversations. C'est le rappel que le souvenir du stage vient
    aussi des personnes.
-5. **PNJ manquants** : la carte complète compte 7 profils BI, 6 Data
+4. **PNJ manquants** : la carte complète compte 7 profils BI, 6 Data
    Engineering, 5 produit. Le prototype en expose 4.

@@ -30,6 +30,8 @@ P = {
     "shoe": "#3B302C",
     "hair_base": "#4A382F",
     "hair_shadow": "#2A1F1B",
+    "logo_dark": "#211820",   # losange de la marque, jamais du noir pur
+    "logo_orange": "#E4761F",
     "ui_panel": "#2E1F2A",
     "ui_border": "#6C4034",
     "phone_screen": "#8FB8C9",
@@ -137,7 +139,9 @@ def npc_skin(shirt, hair=("#4A382F", "#2A1F1B")):
 # Tenues PNJ : chaque profil garde une couleur secondaire identifiable.
 NPC_SKINS = {
     "reception": npc_skin(("#B9866B", "#8E5B47", "#5E3A2E")),
-    "tutor": npc_skin(("#8B8FA8", "#5B6079", "#383C4F"), ("#6E6259", "#3E362F")),
+    # le tuteur est jeune : corporate mais decontracte. Chemise bleue sans
+    # cravate, cheveux bruns fournis -- surtout pas de gris.
+    "tutor": npc_skin(("#7C93B5", "#4E6488", "#33415C"), ("#4A3527", "#2B1E16")),
     "bi07": npc_skin(("#93A86D", "#63784A", "#3D4A2C")),
     "peer": npc_skin(("#C08A79", "#96604F", "#5F3A30"), ("#2A2420", "#1B1714")),
 }
@@ -191,7 +195,27 @@ def _eyes(c, x0, y, kind, spacing):
             c.set(x0 + spacing, y + 1, tone)
 
 
-def _helmet_front(c, cx, top, sk, tilt):
+def _helmet_logo(c, cx, top):
+    """Marque du casque : losange sombre, C orange, 7x5 px.
+
+    A cette echelle, un logo doit etre construit pixel par pixel : les deux
+    barres et le montant gauche du C sont ce qui le rend lisible a 1x. Le
+    losange garde une bordure d au moins un pixel sur chaque rangee.
+    """
+    # Le losange descend vers le bord du casque : place tout en haut du dome,
+    # sa pointe se confondrait avec la silhouette.
+    y = top + 1
+    c.rect(cx - 1, y, cx + 1, y, "logo_dark")
+    c.rect(cx - 2, y + 1, cx + 2, y + 1, "logo_dark")
+    c.rect(cx - 3, y + 2, cx + 3, y + 2, "logo_dark")
+    c.rect(cx - 2, y + 3, cx + 2, y + 3, "logo_dark")
+    c.rect(cx - 1, y + 4, cx + 1, y + 4, "logo_dark")
+    c.rect(cx - 1, y + 1, cx + 1, y + 1, "logo_orange")   # barre haute du C
+    c.set(cx - 1, y + 2, "logo_orange")                    # montant gauche
+    c.rect(cx - 1, y + 3, cx + 1, y + 3, "logo_orange")    # barre basse
+
+
+def _helmet_front(c, cx, top, sk, tilt, logo=True):
     """Casque jaune : dome + large bord. Signature graphique du heros."""
     if not sk["helmet"]:
         c.rect(cx - 7, top + 2, cx + 7, top + 5, sk["hair"][0])
@@ -209,6 +233,8 @@ def _helmet_front(c, cx, top, sk, tilt):
     c.rect(cx - 10 + t, top + 5, cx + 10 + t, top + 5, "helmet_base")
     c.rect(cx - 10 + t, top + 6, cx + 10 + t, top + 6, "helmet_shadow")
     c.row(top + 5, cx - 9 + t, cx - 4 + t, "helmet_light")
+    if logo:
+        _helmet_logo(c, cx + t, top)
 
 
 def _helmet_side(c, cx, top, sk, tilt):
@@ -226,6 +252,8 @@ def _helmet_side(c, cx, top, sk, tilt):
     c.rect(cx - 8 + t, top + 5, cx + 9 + t, top + 5, "helmet_base")
     c.rect(cx - 8 + t, top + 6, cx + 9 + t, top + 6, "helmet_shadow")
     c.row(top + 5, cx - 7 + t, cx - 2 + t, "helmet_light")
+    # de profil, la marque se decale vers l avant du casque
+    _helmet_logo(c, cx + 1 + t, top)
 
 
 def draw_character(cell, p):
@@ -295,7 +323,8 @@ def _draw_front(c, p, sk, cx, base):
         _eyes(c, cx - 4, head_top + 4, p["eyes"], 7)
         c.row(head_bot - 1, cx - 2, cx + 1, "skin_shadow")
 
-    _helmet_front(c, cx, helmet_top, sk, p["helmet_tilt"])
+    # vu de dos, on ne voit pas la marque : elle est a l avant du casque
+    _helmet_front(c, cx, helmet_top, sk, p["helmet_tilt"], logo=not back)
     if p["backpack"]:
         c.rect(cx - 11, torso_top + 2, cx - 9, torso_bot - 1, "ui_panel")
         c.rect(cx + 9, torso_top + 2, cx + 11, torso_bot - 1, "ui_panel")
