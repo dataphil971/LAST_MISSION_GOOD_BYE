@@ -38,6 +38,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+        # Active Pages si ce n'est pas deja fait. Sans cela, l'etape echoue
+        # tant que Settings > Pages > Source n'est pas sur « GitHub Actions »,
+        # et le message d'erreur ne le dit pas clairement.
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
