@@ -11,8 +11,9 @@ import { drawText, textWidth } from '../core/font.js';
 import { wait } from '../core/timeline.js';
 import { C, D } from '../data/palette.js';
 import { T } from '../data/script.js';
-import { drawFloor, drawDesk, drawScreenContent, GROUND } from './backdrops.js';
+import { drawFloor, drawDesk, GROUND } from './backdrops.js';
 import { makeHero, makeNpc } from './cast.js';
+import { MagicButton } from './magic_button.js';
 
 const FEET = GROUND + 2;
 const DESK_X = 258;
@@ -36,17 +37,11 @@ export class MissionAtlasScene extends Scene {
     this.placed = new Set();
     this.selected = null;
     this.shake = 0;
-    this.zoom = 1;
-    this.zoomAt = { x: 192, y: 108 };
     this.screen = 'error';
+    this.magic = new MagicButton(g);
     this.tray = T.atlas.blocks.map((id, i) => ({
       id, x: 12 + i * 72, y: 176, w: 66, h: 26,
     }));
-
-    this.off = document.createElement('canvas');
-    this.off.width = 384; this.off.height = 216;
-    this.offCtx = this.off.getContext('2d');
-    this.offCtx.imageSmoothingEnabled = false;
 
     this.hero = makeHero(g, { x: 240, y: FEET });
     this.hero.play('sit', 4, true);
@@ -137,23 +132,11 @@ export class MissionAtlasScene extends Scene {
     yield wait(0.8);
     yield g.dlg.say('bi07', T.atlas.npcArrive);
 
-    // zoom dramatique : ×2 exactement, aucun pixel n'est déformé.
-    // La musique se coupe : c'est le silence qui fait la blague.
-    this.zoomAt = { x: 292, y: 130 };
-    g.audio.play(null);
-    yield { update: (dt) => (this.zoom = Math.min(2, this.zoom + dt * 6)) >= 2 };
-    this.showButton = true;
-    yield wait(0.9);
-    this.npc.restart('press', 6, false);
-    yield wait(0.35);
-    this.pressed = true;
-    g.audio.sfx('click');
-    yield wait(0.5);
-    this.screen = 'ok';
-    g.audio.sfx('success');
-    yield wait(0.9);
-    this.showButton = false;
-    yield { update: (dt) => (this.zoom = Math.max(1, this.zoom - dt * 6)) <= 1 };
+    // le plan du bouton, partagé avec les trois autres occurrences
+    yield* this.magic.run({
+      presser: this.npc,
+      onSuccess: () => { this.screen = 'ok'; },
+    });
 
     this.hero.play('confused', 5, true);
     yield g.dlg.say('philippe', T.atlas.afterPress);
@@ -175,37 +158,27 @@ export class MissionAtlasScene extends Scene {
     yield wait(0.9);
     g.completeMission('ATLAS');
     yield g.dlg.banner(T.atlas.done, T.atlas.doneSub, 1.8);
-    g.go('montage');
+    g.go('montage', { lit: 0, animate: [0, 8], next: 'missionSentinel' });
   }
 
   update(dt) {
     this.t += dt;
     this.hero.update(dt);
     this.npc.update(dt);
+    this.magic.update(dt);
     if (this.shake > 0) this.shake -= dt;
     if (this.phase === 'puzzle') this.updatePuzzle();
   }
 
   draw(ctx) {
-    const target = this.zoom > 1 ? this.offCtx : ctx;
-    target.fillStyle = C.outline_deep;
-    target.fillRect(0, 0, 384, 216);
-
-    if (this.phase === 'intro' || this.phase === 'puzzle' || this.phase === 'solved') {
-      this.drawReport(target);
-    } else {
-      this.drawDeskStage(target);
-    }
-
-    if (this.zoom > 1) {
-      const k = Math.round(this.zoom);
-      const w = Math.round(384 / k);
-      const h = Math.round(216 / k);
-      const sx = Math.max(0, Math.min(384 - w, Math.round(this.zoomAt.x - w / 2)));
-      const sy = Math.max(0, Math.min(216 - h, Math.round(this.zoomAt.y - h / 2)));
-      ctx.imageSmoothingEnabled = false;
-      ctx.drawImage(this.off, sx, sy, w, h, 0, 0, 384, 216);
-    }
+    // le module du bouton gere le zoom : il rend la scene hors ecran puis
+    // l agrandit d un facteur 2 exact
+    this.magic.render(ctx, (target) => {
+      target.fillStyle = C.outline_deep;
+      target.fillRect(0, 0, 384, 216);
+      if (this.phase === 'gag') this.drawDeskStage(target);
+      else this.drawReport(target);
+    });
   }
 
   // -- rendu du rapport à réorganiser ---------------------------------
@@ -260,24 +233,6 @@ export class MissionAtlasScene extends Scene {
     this.hero.draw(ctx);
     this.npc.draw(ctx);
 
-    if (this.showButton) {
-      // le bouton ridiculement évident
-      const x = 236;
-      const y = 96;
-      const w = 68;
-      const h = 18;
-      ctx.fillStyle = C.ui_shadow;
-      ctx.fillRect(x + 2, y + 2, w, h);
-      ctx.fillStyle = this.pressed ? C.success : C.ui_cell;
-      ctx.fillRect(x, y + (this.pressed ? 2 : 0), w, h);
-      ctx.fillStyle = C.text_cream;
-      strokeRect(ctx, x, y + (this.pressed ? 2 : 0), w, h);
-      drawText(ctx, 'ACTUALISER', x + w / 2, y + 6 + (this.pressed ? 2 : 0),
-        { color: this.pressed ? C.outline_deep : C.text_cream, align: 'center' });
-      if (!this.pressed && Math.floor(this.t * 3) % 2 === 0) {
-        drawText(ctx, '▶', x - 10, y + 6, { color: C.accent_orange });
-      }
-    }
   }
 }
 

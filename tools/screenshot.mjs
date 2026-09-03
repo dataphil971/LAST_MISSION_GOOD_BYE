@@ -43,19 +43,21 @@ globalThis.fetch = async (url) => ({
   json: async () => JSON.parse(readFileSync(join(ROOT, url), 'utf8')),
 });
 
-// Plans à capturer : nom de scène, secondes à laisser passer, fichier.
+// Plans à capturer : scène, secondes à laisser passer, fichier, paramètres.
 const SHOTS = [
   ['title', 1.2, '01-titre.png'],
   ['exterior', 3.4, '02-exterieur.png'],
   ['lobby', 2.6, '03-accueil.png'],
   ['floor', 2.2, '04-plateau.png'],
   ['missionAtlas', 3.0, '05-mission-atlas.png'],
-  ['montage', 14.0, '06-bilan.png'],
-  ['departure', 3.0, '07-depart.png'],
-  ['sunset', 3.0, '08-coucher-de-soleil.png'],
-  ['credits', 2.0, '09-generique.png'],
-  ['credits', 11.0, '10-2h03.png'],
-  ['outro', 9.0, '11-contacts.png'],
+  ['missionSentinel', 4.0, '06-sentinel.png'],
+  ['montage', 14.0, '07-bilan.png',
+    { lit: 9, animate: [9, 10], next: 'departure', final: true }],
+  ['departure', 3.0, '08-depart.png'],
+  ['sunset', 3.0, '09-coucher-de-soleil.png'],
+  ['credits', 2.0, '10-generique.png'],
+  ['credits', 11.0, '11-2h03.png'],
+  ['outro', 9.0, '12-contacts.png'],
 ];
 
 async function run() {
@@ -74,8 +76,8 @@ async function run() {
   mkdirSync(OUT, { recursive: true });
   const DT = 1 / 60;
 
-  for (const [scene, seconds, file] of shots) {
-    game.go(scene, {}, 0.001);
+  for (const [scene, seconds, file, params] of shots) {
+    game.go(scene, params || {}, 0.001);
     game.fade.alpha = 1;
     // deux images pour laisser le fondu basculer et enter() s'exécuter
     for (let i = 0; i < 3; i++) {

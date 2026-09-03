@@ -63,7 +63,7 @@ Noms de code fictifs. Aucun intitulé, système ou personne réels.
 | 08 | PULSE | fiabiliser un baromètre multi-campagnes | mini-boss en trois phases | 45 s | à faire |
 | 09 | SAFEPATH | construire une chaîne Data Engineering | convoyeur, la caméra suit la donnée | 35 s | à faire |
 | 10 | BEACON | surveiller commits et anomalies | classer des événements dans le temps | 30 s | à faire |
-| 11 | SENTINEL | prototyper un agent de gouvernance | bouton magique **inversé** | 40 s | à faire |
+| 11 | SENTINEL | prototyper un agent de gouvernance | audit de bonnes pratiques + bouton magique **inversé** | 40 s | **fait** |
 | 12 | RELAY | rendre une ingestion évolutive | gérer un changement de schéma | 40 s | à faire |
 
 Deux missions comptent plus que les autres : **PULSE**, le seul mini-boss, que
@@ -86,9 +86,12 @@ La quatrième occurrence rejoue **le cadrage exact** de la première : même
 zoom, même silence, même geste. Puis, hors champ : « J'ai toujours aucune idée
 de pourquoi ça marche. » Le gag devient un payoff narratif.
 
-Implémenté dans `src/scenes/mission_atlas.js` (occurrence 1) : coupure de la
-musique, zoom ×2 exact, bouton ridiculement évident, et le plan tient sur la
-réaction de Philippe après le succès.
+Le plan est écrit une seule fois, dans `src/scenes/magic_button.js` :
+coupure de la musique, zoom ×2 exact, bouton ridiculement évident, et l'on
+tient sur la réaction. Les occurrences 1 (ATLAS) et 4 (SENTINEL) l'appellent
+avec des rôles inversés. C'était la condition du payoff : écrites deux fois à
+la main, les deux scènes auraient divergé et la quatrième serait tombée à
+plat.
 
 ## Règles d'UX non négociables
 
@@ -118,13 +121,47 @@ bitmap : `█` (bloc plein, l'espacement d'un pixel entre glyphes donne une
 jauge segmentée) et un glyphe de sept colonnes pour la paire d'yeux, la
 police n'ayant évidemment pas de couverture emoji.
 
+## Plan de production des missions restantes
+
+Le principe : **ne pas construire dix mini-jeux.** Les gimmicks du rapport se
+ramènent à trois familles d'interaction. Deux kits neufs couvrent sept
+missions — c'est tout le levier du projet.
+
+| Kit | Ce qu'on fait | Missions couvertes |
+| --- | --- | --- |
+| **Liaison** | relier des nœuds, règles de validité, compteur d'erreurs | IRIS, ECHO, HORIZON, VERDANT |
+| **Tri** | des cartes tombent, on les range dans N bacs | LEDGER, BEACON, RELAY |
+| **Placement** *(fait, ATLAS)* | poser des blocs dans des zones | BRIDGE |
+| **Audit** *(fait, SENTINEL)* | repérer les violations parmi des objets | — |
+| — | travelling latéral, la caméra suit la donnée | SAFEPATH |
+| — | composition des kits + cadre de boss | PULSE |
+
+Ordre de construction :
+
+1. **Kit Liaison**, puis IRIS, ECHO (gag n°2), HORIZON, VERDANT (gag n°3).
+2. **Kit Tri**, puis LEDGER, BEACON, RELAY.
+3. **BRIDGE** sur le kit de placement — 20 secondes de respiration entre deux
+   morceaux denses.
+4. **SAFEPATH**, la seule scène vraiment sur mesure.
+5. **PULSE en dernier.** Ses trois phases sont exactement les kits déjà
+   écrits, plus un cadre de boss : le construire à la fin, c'est l'obtenir
+   presque gratuitement.
+
+Deux disciplines à tenir. **La durée** : douze missions à leur durée annoncée
+font six minutes, plus trois de récit — on tient la cible, à condition de
+couper plutôt que d'ajouter. Une mission qui a besoin d'un tutoriel est trop
+compliquée : chacune porte une idée, une seule. **La difficulté** : personne
+ne doit échouer, l'erreur est comique (le BONK d'ATLAS, le faux positif de
+SENTINEL), jamais punitive.
+
 ## Reste à produire
 
 1. **Sprites Aseprite** en remplacement des placeholders (voir PIPELINE.md).
    La pose « assis près de la fenêtre, casque posé à côté » mérite un vrai
    dessin : c'est le dernier plan du jeu.
-2. **Missions 02 → 12.** Chaque mission est une scène autonome ; `mission_atlas.js`
-   sert de gabarit (intro → gimmick → récompense → retour au présent).
+2. **Missions 02 → 10 et 12**, selon le plan ci-dessus. `mission_atlas.js` et
+   `mission_sentinel.js` servent de gabarits (intro → gimmick → récompense →
+   retour au présent).
 3. **Pause déjeuner** : le rapport insiste — aucune compétence, aucun KPI,
    juste des conversations. C'est le rappel que le souvenir du stage vient
    aussi des personnes.

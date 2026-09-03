@@ -99,6 +99,13 @@ function drive(game) {
     }
   }
 
+  // mission Sentinel : on signale les objets qui enfreignent une règle,
+  // et seulement ceux-là — un faux positif ferait échouer l'audit
+  if (s.cards && s.phase === 'audit') {
+    const card = s.cards.find((c) => c.rule && !c.flagged);
+    if (card) { clickAt(game, card.x + 6, card.y + 6); return; }
+  }
+
   // zones d'interaction : on amène le héros dessus puis on valide
   if (s.walker && s.walker.enabled && !s.walker.busy) {
     const z = s.walker.triggers[0];
@@ -144,7 +151,8 @@ async function run() {
   seen.add(game.sceneName);            // la scène atteinte au dernier tour
   const seconds = (frames / 60).toFixed(1);
   const expected = ['title', 'exterior', 'lobby', 'elevator', 'floor',
-    'missionAtlas', 'montage', 'departure', 'sunset', 'credits', 'outro'];
+    'missionAtlas', 'montage', 'missionSentinel', 'departure', 'sunset',
+    'credits', 'outro'];
   const missing = expected.filter((s) => !seen.has(s));
 
   console.log('scènes traversées :', [...seen].join(' → '));
@@ -162,9 +170,17 @@ async function run() {
     console.error('\nSCÈNES JAMAIS ATTEINTES : ' + missing.join(', '));
     process.exit(1);
   }
-  if (game.state.magicButton !== 1) {
-    console.error('\nLe running gag du bouton magique ne s\'est pas déclenché.');
+  // L'arc du gag doit aller jusqu'à son terme : Philippe finit par aider.
+  if (game.state.magicButton !== 4) {
+    console.error('\nL\'arc du bouton magique s\'arrête à l\'occurrence '
+      + game.state.magicButton + '/4.');
     process.exit(1);
+  }
+  for (const mission of ['ATLAS', 'SENTINEL']) {
+    if (!game.state.missions.includes(mission)) {
+      console.error('\nMission jamais terminée : ' + mission);
+      process.exit(1);
+    }
   }
   console.log('\nOK — parcours complet sans erreur.');
 }

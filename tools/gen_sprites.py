@@ -172,6 +172,8 @@ def npc_tags(base_y, cx):
         ]
         tags["npc/%s/talk" % name] = [p(view="front"),
                                       p(view="front", eyes="closed")]
+        tags["npc/%s/sit" % name] = [p(view="side", sit=True),
+                                     p(view="side", sit=True, bob=-1)]
         # le geste du bouton magique : approche, index, retrait
         tags["npc/%s/press" % name] = [
             p(view="side", hand_up=True),

@@ -47,6 +47,7 @@ export function makeNpc(game, variant, opts = {}) {
     idleSide: `npc/${variant}/idle_side`,
     walk: `npc/${variant}/walk`,
     talk: `npc/${variant}/talk`,
+    sit: `npc/${variant}/sit`,
     press: `npc/${variant}/press`,
   }, { speed: 32, ...opts });
 }

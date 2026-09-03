@@ -21,13 +21,15 @@ premier écran jusqu'aux liens de contact, sans trou :
 | --- | --- | --- |
 | Premiers pas | extérieur 08:43, accueil, ascenseur, plateau | jouable |
 | Comprendre | **Mission 01 · ATLAS** + bouton magique n°1 | jouable |
-| Ellipse | missions 02 → 12 en accéléré | montage |
+| Ellipse | missions 02 → 10 en accéléré | montage |
+| Transmettre | **Mission 11 · SENTINEL** — agent de gouvernance, bonnes pratiques, bouton magique n°4 | jouable |
+| Ellipse | mission 12, bilan de stage | montage |
 | Quitter | fermeture des applications, trajet inverse, coucher de soleil, discours | jouable |
 | Post-générique | « 2 h 03 de trajet », écran de contact | jouable |
 
 Les quatre liens de contact sont fonctionnels. Ce qui reste à produire est
-listé dans [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) : les onze autres
-missions et les vrais sprites Aseprite.
+listé dans [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) : les dix missions
+restantes et les vrais sprites Aseprite.
 
 L'écran-titre propose trois entrées : **JOUER**, **MODE RAPIDE**, et
 **ALLER À LA FIN** — qui saute directement au coucher de soleil, au message
@@ -36,7 +38,8 @@ d'au revoir et aux contacts, pour les gens pressés.
 | | |
 | --- | --- |
 | ![Extérieur](docs/screens/02-exterieur.png) | ![Mission Atlas](docs/screens/05-mission-atlas.png) |
-| ![Coucher de soleil](docs/screens/08-coucher-de-soleil.png) | ![Contacts](docs/screens/11-contacts.png) |
+| ![Mission Sentinel](docs/screens/06-sentinel.png) | ![Bilan de stage](docs/screens/07-bilan.png) |
+| ![Coucher de soleil](docs/screens/09-coucher-de-soleil.png) | ![Contacts](docs/screens/12-contacts.png) |
 
 ## Lancer le jeu
 

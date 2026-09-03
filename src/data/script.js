@@ -71,10 +71,56 @@ export const T = {
     doneSub: 'TERMINÉE  ·  Souvenir ajouté.',
   },
 
+  // -- Mission 11 : SENTINEL ---------------------------------------------
+  // L'agent de gouvernance et les bonnes pratiques. C'est aussi la
+  // quatrième et dernière occurrence du bouton magique : Philippe transmet.
+  sentinel: {
+    id: 'SENTINEL',
+    number: 'MISSION 11',
+    title: 'L\'apprenti devient mentor',
+    goal: 'Un agent qui vérifie les règles pendant que tu dors.',
+    instruction: 'Clique les objets qui enfreignent une règle.',
+    agent: 'AGENT DE GOUVERNANCE',
+    rulesTitle: 'RÈGLES SURVEILLÉES',
+    // Les bonnes pratiques, telles qu'on se les fait rappeler en vrai.
+    rules: [
+      'DEV avant PROD',
+      'Nom métier attendu',
+      'Description obligatoire',
+      'Granularité vérifiée',
+      'Source unique de vérité',
+    ],
+    // Quatre violations, deux objets conformes : le piège est de tout
+    // signaler. Un faux positif coûte aussi cher qu'un oubli.
+    cards: [
+      { name: 'Report Orion', note: 'publié direct en PROD', rule: 'DEV avant PROD' },
+      { name: 'CA_2024_v2_final', note: 'nom technique côté métier', rule: 'Nom métier' },
+      { name: 'dim_client', note: 'aucune description', rule: 'Description' },
+      { name: 'Campaign 07', note: 'mesure au mauvais grain', rule: 'Granularité' },
+      { name: 'Workspace North', note: 'conforme au catalogue', rule: null },
+      { name: 'Dataset A', note: 'relation au bon niveau', rule: null },
+    ],
+    falsePositive: 'Celui-là est conforme.',
+    missed: 'violations',
+    ready: 'AGENT PRÊT',
+    solved: 'L\'agent tourne. Il tournera encore lundi.',
+    // Le bouton magique, occurrence n°4 : cette fois, c'est lui qui aide.
+    peerStuck: 'RULE CHECK FAILED',
+    peerCall: 'Il refuse de passer et je ne vois pas pourquoi.',
+    peerAsk: 'Comment t\'as su ?',
+    heroAnswer: 'L\'expérience.',
+    heroOffscreen: '...je crois.',
+    skillBanner: 'COMPÉTENCE DÉBLOQUÉE',
+    skillName: 'GOUVERNANCE',
+    xp: '+300 XP',
+    done: 'MISSION ARCHIVÉE',
+    doneSub: 'TERMINÉE  ·  Souvenir ajouté.',
+  },
+
   // -- Montage : le reste du stage passe en accéléré ---------------------
   montage: {
     banner: 'ARCHIVES DU STAGE',
-    note: 'PROTOTYPE  ·  missions 02 à 12 à produire',
+    note: 'PROTOTYPE  ·  missions 02 à 10 et 12 à produire',
     missions: [
       ['02', 'IRIS', 'Mais cette colonne veut dire quoi ?'],
       ['03', 'ECHO', 'Qui est qui ?'],
@@ -180,5 +226,6 @@ export const CAST = {
   reception: { name: 'Accueil', color: '#D2C5A6' },
   tutor: { name: 'Tuteur · PO_01', color: '#8B8FA8' },
   bi07: { name: 'BI_07', color: '#93A86D' },
+  peer: { name: 'DE_04', color: '#C08A79' },
   narrator: { name: '', color: '#D2C5A6' },
 };

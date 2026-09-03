@@ -11,6 +11,7 @@ import { TitleScene } from './scenes/title.js';
 import { ExteriorScene, LobbyScene, ElevatorScene } from './scenes/arrival.js';
 import { FloorScene } from './scenes/plateau.js';
 import { MissionAtlasScene } from './scenes/mission_atlas.js';
+import { MissionSentinelScene } from './scenes/mission_sentinel.js';
 import { MontageScene } from './scenes/montage.js';
 import { DepartureScene, SunsetScene, CreditsScene } from './scenes/farewell.js';
 import { OutroScene } from './scenes/outro.js';
@@ -64,6 +65,9 @@ async function boot() {
   game.dlg.defineSpeaker('bi07', {
     ...CAST.bi07, atlas: game.assets.npc, tag: 'npc/bi07/talk',
   });
+  game.dlg.defineSpeaker('peer', {
+    ...CAST.peer, atlas: game.assets.npc, tag: 'npc/peer/talk',
+  });
   game.dlg.defineSpeaker('narrator', { ...CAST.narrator });
 
   game.register('title', (g) => new TitleScene(g));
@@ -72,6 +76,7 @@ async function boot() {
   game.register('elevator', (g) => new ElevatorScene(g));
   game.register('floor', (g) => new FloorScene(g));
   game.register('missionAtlas', (g) => new MissionAtlasScene(g));
+  game.register('missionSentinel', (g) => new MissionSentinelScene(g));
   game.register('montage', (g) => new MontageScene(g));
   game.register('departure', (g) => new DepartureScene(g));
   game.register('sunset', (g) => new SunsetScene(g));

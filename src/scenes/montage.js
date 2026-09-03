@@ -13,9 +13,20 @@ import { C } from '../data/palette.js';
 import { T } from '../data/script.js';
 
 export class MontageScene extends Scene {
-  enter() {
+  /**
+   * Le montage se joue en deux temps, de part et d'autre de SENTINEL :
+   * missions 02→10, puis on joue la 11, puis 11→12 et le bilan.
+   * params : { lit, animate: [de, à], next, final }
+   */
+  enter(params = {}) {
+    const rows = T.montage.missions.length;
+    this.from = params.animate ? params.animate[0] : 0;
+    this.to = params.animate ? Math.min(params.animate[1], rows - 1) : rows - 1;
+    this.shown = params.lit || 0;
+    this.next = params.next || 'departure';
+    this.final = !!params.final;
+    this.upcoming = -1;       // ligne mise en avant, la mission à jouer
     this.t = 0;
-    this.shown = 0;
     this.recap = -1;          // nombre de lignes de bilan déjà révélées
     this.reward = false;
     this.game.audio.play('mission');
@@ -24,12 +35,24 @@ export class MontageScene extends Scene {
 
   * script() {
     const g = this.game;
-    yield g.dlg.banner(T.montage.banner, T.montage.note, 1.8);
-    for (let i = 0; i < T.montage.missions.length; i++) {
+    if (this.shown === 0) {
+      yield g.dlg.banner(T.montage.banner, T.montage.note, 1.8);
+    }
+    for (let i = this.from; i <= this.to; i++) {
       this.shown = i + 1;
       g.audio.sfx('select');
       yield wait(g.fastMode ? 0.16 : 0.28);
     }
+
+    // Premier temps : le défilé s'arrête sur la mission qu'on va jouer.
+    if (!this.final) {
+      this.upcoming = this.to + 1;
+      g.audio.sfx('ding');
+      yield wait(g.fastMode ? 0.9 : 1.6);
+      this.finish();
+      return;
+    }
+
     yield wait(0.6);
     g.audio.sfx('success');
     yield g.dlg.banner(T.montage.end, T.montage.endSub, 1.5, C.success);
@@ -57,7 +80,10 @@ export class MontageScene extends Scene {
 
   finish() {
     this.game.skippable = null;
-    this.game.go('departure', {}, 0.8);
+    const params = this.final
+      ? {}
+      : { lit: 9, animate: [9, 10], next: 'departure', final: true };
+    this.game.go(this.next, this.final ? {} : params, 0.8);
   }
 
   update(dt) { this.t += dt; }
@@ -76,17 +102,22 @@ export class MontageScene extends Scene {
       const y = 30 + i * 16;
       const done = i < this.shown;
       const appearing = i === this.shown - 1 && this.t > 0;
+      const next = i === this.upcoming;
+      const pulse = next && Math.floor(this.t * 3) % 2 === 0;
       panel(ctx, 40, y, 304, 14, {
-        fill: done ? '#2A2230' : '#201A26',
-        border: done ? C.ui_border : '#2A2230',
+        fill: next ? '#3A3040' : (done ? '#2A2230' : '#201A26'),
+        border: next ? C.accent_orange : (done ? C.ui_border : '#2A2230'),
       });
       drawText(ctx, num, 48, y + 4,
-        { color: done ? C.accent_orange : '#3A3040' });
+        { color: done || next ? C.accent_orange : '#3A3040' });
       drawText(ctx, code, 66, y + 4,
-        { color: done ? C.text_cream : '#3A3040' });
+        { color: done || next ? C.text_cream : '#3A3040' });
       drawText(ctx, title, 132, y + 4,
-        { color: done ? C.text_muted : '#332B3C' });
-      if (done) {
+        { color: done || next ? C.text_muted : '#332B3C' });
+      if (next) {
+        drawText(ctx, pulse ? '▶ EN COURS' : 'EN COURS', 336, y + 4,
+          { color: C.accent_orange, align: 'right' });
+      } else if (done) {
         drawText(ctx, appearing ? '▶' : '·', 332, y + 4,
           { color: C.success, align: 'right' });
       }
