@@ -46,6 +46,9 @@ const G = {
   g: '...../...../.####/#...#/#...#/.####/....#/#...#/.###.',
   h: '#..../#..../####./#...#/#...#/#...#/#...#',
   i: '.#.../...../##.../.#.../.#.../.#.../.###.',
+  // i sans point : un « i » accentué perd son point, sinon la lettre
+  // porterait deux marques superposées.
+  'ı': '...../...../##.../.#.../.#.../.#.../.###.',
   j: '...#./...../..##./...#./...#./...#./...#./#..#./.##..',
   k: '#..../#..../#..#./#.#../##.../#.#../#..#.',
   l: '##.../.#.../.#.../.#.../.#.../.#.../.###.',
@@ -141,7 +144,7 @@ const COMPOSED = {
   'é': ['e', 'acute'], 'è': ['e', 'grave'], 'ê': ['e', 'circ'],
   'ë': ['e', 'trema'], 'à': ['a', 'grave'], 'â': ['a', 'circ'],
   'ä': ['a', 'trema'], 'ù': ['u', 'grave'], 'û': ['u', 'circ'],
-  'ü': ['u', 'trema'], 'î': ['i', 'circ'], 'ï': ['i', 'trema'],
+  'ü': ['u', 'trema'], 'î': ['ı', 'circ'], 'ï': ['ı', 'trema'],
   'ô': ['o', 'circ'], 'ö': ['o', 'trema'], 'ç': ['c', 'cedil'],
   'É': ['E', 'acute'], 'È': ['E', 'grave'], 'Ê': ['E', 'circ'],
   'À': ['A', 'grave'], 'Â': ['A', 'circ'], 'Ç': ['C', 'cedil'],
@@ -160,14 +163,28 @@ function glyph(ch) {
   const def = G[base];
   let g;
   if (!def) {
-    g = { rows: [], w: SPACE_W, accent: null };
+    g = { rows: [], w: SPACE_W, accent: null, top: 0 };
   } else {
     const rows = def.split('/');
     let w = 0;
-    for (const r of rows) {
-      for (let x = 0; x < r.length; x++) if (r[x] === '#') w = Math.max(w, x + 1);
+    let top = rows.length;
+    for (let y = 0; y < rows.length; y++) {
+      const r = rows[y];
+      for (let x = 0; x < r.length; x++) {
+        if (r[x] !== '#') continue;
+        w = Math.max(w, x + 1);
+        if (y < top) top = y;
+      }
     }
-    g = { rows, w: w || SPACE_W, accent: accent ? ACCENTS[accent] : null };
+    // L'accent se pose au-dessus de la LETTRE, pas au-dessus de la case :
+    // une minuscule commence deux rangées plus bas qu'une capitale, et un
+    // accent calé sur la case irait mordre la ligne précédente.
+    g = {
+      rows,
+      w: w || SPACE_W,
+      top: top === rows.length ? 0 : top,
+      accent: accent ? ACCENTS[accent] : null,
+    };
   }
   cache.set(ch, g);
   return g;
@@ -210,7 +227,7 @@ export function drawText(ctx, str, x, y, opts = {}) {
       }
     }
     if (g.accent) {
-      const off = g.accent.below ? g.rows.length : -2;
+      const off = g.accent.below ? g.rows.length : g.top - 2;
       for (let ry = 0; ry < g.accent.rows.length; ry++) {
         const row = g.accent.rows[ry];
         for (let rx = 0; rx < row.length; rx++) {
@@ -221,6 +238,20 @@ export function drawText(ctx, str, x, y, opts = {}) {
     px += g.w + spacing;
   }
   return px;
+}
+
+/**
+ * Tronque avec une ellipse si le texte ne tient pas. Couper en silence au
+ * milieu d une phrase se lit comme un bug d affichage, pas comme un choix.
+ */
+export function truncate(str, maxW, spacing = 1) {
+  if (textWidth(str, spacing) <= maxW) return str;
+  const chars = [...str];
+  for (let n = chars.length - 1; n > 0; n--) {
+    const cut = chars.slice(0, n).join('').trimEnd() + '…';
+    if (textWidth(cut, spacing) <= maxW) return cut;
+  }
+  return '…';
 }
 
 /** Decoupe un texte en lignes tenant dans maxW pixels. */

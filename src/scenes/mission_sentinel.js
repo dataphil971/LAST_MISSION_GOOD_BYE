@@ -138,7 +138,8 @@ export class MissionSentinelScene extends Scene {
     yield wait(0.9);
     g.completeMission('SENTINEL');
     yield g.dlg.banner(S.done, S.doneSub, 1.8);
-    g.go('montage', { lit: 9, animate: [9, 10], next: 'departure', final: true });
+    g.afterMission('montage',
+      { lit: 9, animate: [9, 10], next: 'departure', final: true });
   }
 
   update(dt) {

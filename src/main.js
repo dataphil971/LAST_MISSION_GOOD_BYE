@@ -8,6 +8,7 @@ import { CAST } from './data/script.js';
 import { C } from './data/palette.js';
 
 import { TitleScene } from './scenes/title.js';
+import { LevelsScene } from './scenes/levels.js';
 import { ExteriorScene, LobbyScene, ElevatorScene } from './scenes/arrival.js';
 import { FloorScene } from './scenes/plateau.js';
 import { MissionAtlasScene } from './scenes/mission_atlas.js';
@@ -71,6 +72,7 @@ async function boot() {
   game.dlg.defineSpeaker('narrator', { ...CAST.narrator });
 
   game.register('title', (g) => new TitleScene(g));
+  game.register('levels', (g) => new LevelsScene(g));
   game.register('exterior', (g) => new ExteriorScene(g));
   game.register('lobby', (g) => new LobbyScene(g));
   game.register('elevator', (g) => new ElevatorScene(g));

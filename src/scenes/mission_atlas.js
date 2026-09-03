@@ -158,7 +158,7 @@ export class MissionAtlasScene extends Scene {
     yield wait(0.9);
     g.completeMission('ATLAS');
     yield g.dlg.banner(T.atlas.done, T.atlas.doneSub, 1.8);
-    g.go('montage', { lit: 0, animate: [0, 8], next: 'missionSentinel' });
+    g.afterMission('montage', { lit: 0, animate: [0, 8], next: 'missionSentinel' });
   }
 
   update(dt) {

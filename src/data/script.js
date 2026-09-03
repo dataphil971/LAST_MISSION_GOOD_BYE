@@ -7,6 +7,24 @@
 // Tonalité visée : 60 % chaleureux, 25 % humour de bureau, 15 % valorisation.
 // On rit AVEC Philippe, jamais DE Philippe.
 
+// Les douze missions, source unique : l'écran de sélection les affiche
+// toutes, le montage reprend la même liste à partir de la deuxième.
+// Quatrième colonne : la scène jouable, ou null si elle reste à produire.
+export const LEVELS = [
+  ['01', 'ATLAS', 'Trop de choses à l\'écran', 'missionAtlas'],
+  ['02', 'IRIS', 'Mais cette colonne veut dire quoi ?', null],
+  ['03', 'ECHO', 'Qui est qui ?', null],
+  ['04', 'LEDGER', 'Il en manque un', null],
+  ['05', 'BRIDGE', 'Deux IDs entrent dans un bar...', null],
+  ['06', 'VERDANT', 'Changer sans casser', null],
+  ['07', 'HORIZON', 'Une étoile, mais pas dans le ciel', null],
+  ['08', 'PULSE', 'Le mini-boss', null],
+  ['09', 'SAFEPATH', 'Suis la donnée', null],
+  ['10', 'BEACON', '48 heures', null],
+  ['11', 'SENTINEL', 'L\'apprenti devient mentor', 'missionSentinel'],
+  ['12', 'RELAY', 'Faire en sorte que ça continue sans moi', null],
+];
+
 export const T = {
   title: {
     name: 'LAST MISSION',
@@ -16,7 +34,17 @@ export const T = {
     start: 'JOUER',
     fast: 'MODE RAPIDE',
     end: 'ALLER À LA FIN',
+    levels: 'MISSIONS',
     hint: 'CLIC ou ESPACE pour avancer  ·  ÉCHAP pour le menu',
+  },
+
+  levels: {
+    title: 'LES DOUZE MISSIONS',
+    sub: 'Deux sont jouables. Les dix autres restent à produire.',
+    play: 'JOUER',
+    todo: 'À VENIR',
+    done: 'FAIT',
+    back: 'RETOUR',
   },
 
   exterior: {
@@ -121,19 +149,8 @@ export const T = {
   montage: {
     banner: 'ARCHIVES DU STAGE',
     note: 'PROTOTYPE  ·  missions 02 à 10 et 12 à produire',
-    missions: [
-      ['02', 'IRIS', 'Mais cette colonne veut dire quoi ?'],
-      ['03', 'ECHO', 'Qui est qui ?'],
-      ['04', 'LEDGER', 'Il en manque un'],
-      ['05', 'BRIDGE', 'Deux IDs entrent dans un bar...'],
-      ['06', 'VERDANT', 'Changer sans casser'],
-      ['07', 'HORIZON', 'Une étoile, mais pas dans le ciel'],
-      ['08', 'PULSE', 'Le mini-boss'],
-      ['09', 'SAFEPATH', 'Suis la donnée'],
-      ['10', 'BEACON', '48 heures'],
-      ['11', 'SENTINEL', 'L\'apprenti devient mentor'],
-      ['12', 'RELAY', 'Faire en sorte que ça continue sans moi'],
-    ],
+    // les onze missions qui suivent ATLAS, reprises de LEVELS
+    missions: LEVELS.slice(1),
     end: 'MISSION 12',
     endSub: 'TERMINÉE',
     internship: 'STAGE',

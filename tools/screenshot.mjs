@@ -46,18 +46,19 @@ globalThis.fetch = async (url) => ({
 // Plans à capturer : scène, secondes à laisser passer, fichier, paramètres.
 const SHOTS = [
   ['title', 1.2, '01-titre.png'],
-  ['exterior', 3.4, '02-exterieur.png'],
-  ['lobby', 2.6, '03-accueil.png'],
-  ['floor', 2.2, '04-plateau.png'],
-  ['missionAtlas', 3.0, '05-mission-atlas.png'],
-  ['missionSentinel', 4.0, '06-sentinel.png'],
-  ['montage', 14.0, '07-bilan.png',
+  ['levels', 1.0, '02-missions.png'],
+  ['exterior', 3.4, '03-exterieur.png'],
+  ['lobby', 2.6, '04-accueil.png'],
+  ['floor', 2.2, '05-plateau.png'],
+  ['missionAtlas', 3.0, '06-mission-atlas.png'],
+  ['missionSentinel', 4.0, '07-sentinel.png'],
+  ['montage', 14.0, '08-bilan.png',
     { lit: 9, animate: [9, 10], next: 'departure', final: true }],
-  ['departure', 3.0, '08-depart.png'],
-  ['sunset', 3.0, '09-coucher-de-soleil.png'],
-  ['credits', 2.0, '10-generique.png'],
-  ['credits', 11.0, '11-2h03.png'],
-  ['outro', 9.0, '12-contacts.png'],
+  ['departure', 3.0, '09-depart.png'],
+  ['sunset', 3.0, '10-coucher-de-soleil.png'],
+  ['credits', 2.0, '11-generique.png'],
+  ['credits', 11.0, '12-2h03.png'],
+  ['outro', 9.0, '13-contacts.png'],
 ];
 
 async function run() {

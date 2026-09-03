@@ -9,11 +9,11 @@ import { T } from '../data/script.js';
 import { drawSunset } from './backdrops.js';
 import { makeHero } from './cast.js';
 
-// Trois entrées possibles. « Aller à la fin » existe pour les gens pressés :
-// mieux vaut qu'un collègue lise le message d'au revoir tout de suite que
-// pas du tout.
+// Quatre entrées. « Aller à la fin » existe pour les gens pressés : mieux
+// vaut qu'un collègue lise le message d'au revoir tout de suite que pas du
+// tout. « Missions » ouvre la sélection des douze niveaux.
 const BTN = { x: 128, w: 128, h: 16 };
-const ROWS = [144, 164, 184];
+const ROWS = [136, 154, 172, 190];
 
 export class TitleScene extends Scene {
   enter() {
@@ -31,6 +31,10 @@ export class TitleScene extends Scene {
     if (i.clickIn(BTN.x, ROWS[0], BTN.w, BTN.h)) this.start(false);
     else if (i.clickIn(BTN.x, ROWS[1], BTN.w, BTN.h)) this.start(true);
     else if (i.clickIn(BTN.x, ROWS[2], BTN.w, BTN.h)) this.skipToEnd();
+    else if (i.clickIn(BTN.x, ROWS[3], BTN.w, BTN.h)) {
+      this.game.audio.sfx('select');
+      this.game.go('levels');
+    }
     else if (i.justPressed('advance')) this.start(this.game.fastMode);
   }
 
@@ -68,19 +72,19 @@ export class TitleScene extends Scene {
     drawText(ctx, T.title.tagline, 192, 82,
       { color: C.text_muted, align: 'center' });
 
-    panel(ctx, 128, 118, 128, 20);
-    drawText(ctx, T.title.duration, 192, 124,
+    panel(ctx, 128, 112, 128, 18);
+    drawText(ctx, T.title.duration, 192, 117,
       { color: C.text_muted, align: 'center' });
 
-    const labels = [T.title.start, T.title.fast, T.title.end];
-    const active = [false, this.game.fastMode, false];
+    const labels = [T.title.start, T.title.fast, T.title.end, T.title.levels];
+    const active = [false, this.game.fastMode, false, false];
     ROWS.forEach((y, i) => {
       const hover = this.game.input.hoverIn(BTN.x, y, BTN.w, BTN.h);
       button(ctx, BTN.x, y, BTN.w, BTN.h, labels[i], hover || active[i]);
     });
 
     if (Math.floor(this.t * 1.5) % 2 === 0) {
-      drawText(ctx, T.title.hint, 192, 206,
+      drawText(ctx, T.title.hint, 192, 208,
         { color: C.text_muted, align: 'center', shadow: C.outline_deep });
     }
   }

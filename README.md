@@ -31,15 +31,18 @@ Les quatre liens de contact sont fonctionnels. Ce qui reste à produire est
 listé dans [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) : les dix missions
 restantes et les vrais sprites Aseprite.
 
-L'écran-titre propose trois entrées : **JOUER**, **MODE RAPIDE**, et
+L'écran-titre propose quatre entrées : **JOUER**, **MODE RAPIDE**,
 **ALLER À LA FIN** — qui saute directement au coucher de soleil, au message
-d'au revoir et aux contacts, pour les gens pressés.
+d'au revoir et aux contacts, pour les gens pressés — et **MISSIONS**, qui
+ouvre la sélection des douze niveaux. Une mission lancée depuis cet écran y
+revient au lieu d'embarquer le joueur dans la suite de la journée.
 
 | | |
 | --- | --- |
-| ![Extérieur](docs/screens/02-exterieur.png) | ![Mission Atlas](docs/screens/05-mission-atlas.png) |
-| ![Mission Sentinel](docs/screens/06-sentinel.png) | ![Bilan de stage](docs/screens/07-bilan.png) |
-| ![Coucher de soleil](docs/screens/09-coucher-de-soleil.png) | ![Contacts](docs/screens/12-contacts.png) |
+| ![Sélection des missions](docs/screens/02-missions.png) | ![Extérieur](docs/screens/03-exterieur.png) |
+| ![Mission Atlas](docs/screens/06-mission-atlas.png) | ![Mission Sentinel](docs/screens/07-sentinel.png) |
+| ![Bilan de stage](docs/screens/08-bilan.png) | ![Coucher de soleil](docs/screens/10-coucher-de-soleil.png) |
+| ![Générique](docs/screens/11-generique.png) | ![Contacts](docs/screens/13-contacts.png) |
 
 ## Lancer le jeu
 

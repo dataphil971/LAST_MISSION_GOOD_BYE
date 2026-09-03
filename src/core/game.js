@@ -120,6 +120,19 @@ export class Game {
     if (!this.state.missions.includes(id)) this.state.missions.push(id);
   }
 
+  /**
+   * Sortie de mission. Une mission lancée depuis l'écran de sélection y
+   * revient ; jouée dans la journée, elle enchaîne sur la suite du récit.
+   */
+  afterMission(next, params = {}) {
+    if (this.state.flags.standalone) {
+      this.state.flags.standalone = false;
+      this.go('levels');
+    } else {
+      this.go(next, params);
+    }
+  }
+
   // -- boucle -----------------------------------------------------------
   start() {
     let last = performance.now();
