@@ -144,6 +144,7 @@ Le `package.json` ne sert qu'à regrouper les scripts.
 python tools/gen_sprites.py     # régénère les spritesheets placeholder
 node tools/smoke_test.mjs       # joue le jeu en entier, sans navigateur
 node tools/screenshot.mjs       # rend les captures de docs/screens/
+node tools/cast_sheet.mjs       # planche de casting : tous les PNJ côte à côte
 node tools/build_single.mjs     # build mono-fichier
 ```
 
@@ -171,6 +172,7 @@ sont inventées. La règle complète et la checklist avant publication sont dans
 
 - [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) — actes, douze missions, running gag, tonalité, reste à faire
 - [docs/ART_BIBLE.md](docs/ART_BIBLE.md) — palette, cellules, pivots, contours, animations, tests de validation
+- [docs/NPC_CAST.md](docs/NPC_CAST.md) — les collègues : couche d'ambiance, casting, micro-gags, épilogue du métro
 - [docs/PIPELINE.md](docs/PIPELINE.md) — Aseprite → PNG/JSON → moteur, et comment remplacer les placeholders
 - [docs/SECURITY.md](docs/SECURITY.md) — doctrine d'anonymisation
 

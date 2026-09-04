@@ -13,6 +13,11 @@ d'anonymat total posé par le rapport de conception. C'est un choix délibéré 
 le jeu est un message d'au revoir adressé à des collègues, et le casque est la
 signature du personnage.
 
+La même marque apparaît une seconde fois, sur le sweat bleu du PNJ `BI_01`
+(voir [NPC_CAST.md](NPC_CAST.md)). Deux emplacements, pas trois : la règle est
+que la marque se compte, et que chaque nouvelle apparition reste une décision,
+jamais une habitude.
+
 L'exception est **strictement limitée au logo**. Tout le reste du document
 reste applicable : aucun projet, système, table, environnement ni donnée
 identifiable. Un lecteur extérieur doit pouvoir deviner l'entreprise, jamais
@@ -22,9 +27,10 @@ Deux conséquences pratiques :
 
 - l'usage reste un usage personnel de remerciement, pas une communication au
   nom de l'entreprise — le jeu ne doit rien affirmer en son nom ;
-- si l'entreprise demande le retrait de sa marque, un seul endroit est à
-  modifier : `_helmet_logo()` dans `tools/rig.py`, puis régénérer les
-  spritesheets avec `python tools/gen_sprites.py`.
+- si l'entreprise demande le retrait de sa marque, deux fonctions sont à
+  neutraliser dans `tools/rig.py` — `_helmet_logo()` pour le casque,
+  `_chest_logo()` / `_sleeve_logo()` pour le sweat de `BI_01` — puis
+  régénérer les spritesheets avec `python tools/gen_sprites.py`.
 
 Note : `T.recap.title` affiche également « STAGE CDS », un acronyme interne.
 Même logique, même point de retrait s'il faut neutraliser.

@@ -91,6 +91,9 @@ export const T = {
     npcArrive: 'T\'as essayé... ça ?',
     afterPress: '...c\'était ça ?',
     npcYes: 'Oui.',
+    // Elle repart avec sa propre journée en tête. Le décalage est tout le
+    // gag : Philippe vient de vivre un drame, elle pense à sa grille.
+    npcThought: 'Tiens, j\'aimerais bien me faire un sudoku, moi.',
     heroCamera: 'Très bien.',
     skillBanner: 'COMPÉTENCE DÉBLOQUÉE',
     skillName: 'HIÉRARCHIE VISUELLE',
@@ -244,5 +247,6 @@ export const CAST = {
   tutor: { name: 'Tuteur · PO_01', color: '#8B8FA8' },
   bi07: { name: 'BI_07', color: '#93A86D' },
   peer: { name: 'DE_04', color: '#C08A79' },
+  bi02: { name: 'BI_02', color: '#D09A5C' },
   narrator: { name: '', color: '#D2C5A6' },
 };

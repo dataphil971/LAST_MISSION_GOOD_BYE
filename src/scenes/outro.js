@@ -13,6 +13,7 @@ import { T } from '../data/script.js';
 import { CONFIG, contactReady } from '../config.js';
 import { drawTransport } from './backdrops.js';
 import { makeHeroCs } from './cast.js';
+import { TransitCrowd } from './transit.js';
 
 // Les cartes se posent en haut de l'image : le dernier plan appartient à
 // Philippe, assis près de la fenêtre, son casque posé à côté de lui.
@@ -26,6 +27,7 @@ export class OutroScene extends Scene {
     this.reveal = 0;
     this.hero = makeHeroCs(g, { x: 96, y: 196 });
     this.hero.play('window', 2, true);
+    this.crowd = new TransitCrowd(g);   // la rame continue sans lui
     g.audio.play('train');
 
     this.cards = CONFIG.contacts.map((c, i) => ({
@@ -85,8 +87,12 @@ export class OutroScene extends Scene {
 
   draw(ctx) {
     drawTransport(ctx, this.t);
+    // Les figurants passent derrière Philippe : il reste le premier plan,
+    // et c'est lui qui les recouvre quand quelqu'un traverse.
+    this.crowd.draw(ctx, this.t, 'back');
     this.hero.draw(ctx);
     drawHelmetProp(ctx, 148, 182);        // le casque, posé à côté de lui
+    this.crowd.draw(ctx, this.t, 'front');  // ceux qui passent devant lui
 
     if (this.reveal <= 0) return;
     ctx.globalAlpha = this.reveal;

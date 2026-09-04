@@ -11,7 +11,7 @@ import { drawText, textWidth } from '../core/font.js';
 import { wait } from '../core/timeline.js';
 import { C, D } from '../data/palette.js';
 import { T } from '../data/script.js';
-import { drawFloor, drawDesk, GROUND } from './backdrops.js';
+import { drawFloor, drawDesk, drawChair, GROUND } from './backdrops.js';
 import { makeHero, makeNpc } from './cast.js';
 import { MagicButton } from './magic_button.js';
 
@@ -142,6 +142,10 @@ export class MissionAtlasScene extends Scene {
     yield g.dlg.say('philippe', T.atlas.afterPress);
     yield g.dlg.say('bi07', T.atlas.npcYes);
     this.npc.face(1);
+    yield this.npc.walkTo(344, { walk: 'walk', idle: 'idleSide' });
+    // Elle s'arrête un instant avant de sortir du champ : la pensée est
+    // pour elle, pas pour Philippe.
+    yield g.dlg.say('bi07', T.atlas.npcThought, { style: 'thought', hold: 1.7 });
     yield this.npc.walkTo(420, { walk: 'walk', idle: 'idleSide' });
 
     // Philippe regarde la caméra
@@ -176,7 +180,11 @@ export class MissionAtlasScene extends Scene {
     this.magic.render(ctx, (target) => {
       target.fillStyle = C.outline_deep;
       target.fillRect(0, 0, 384, 216);
-      if (this.phase === 'gag') this.drawDeskStage(target);
+      // Le plan d'ouverture montre le plateau : Philippe à son poste, les
+      // collègues au travail derrière lui. On entre dans l'interface
+      // ensuite — une mission qui démarre sur un tableau de bord plein
+      // écran oublie de dire où l'on est.
+      if (this.phase === 'gag' || this.phase === 'intro') this.drawDeskStage(target);
       else this.drawReport(target);
     });
   }
@@ -229,6 +237,7 @@ export class MissionAtlasScene extends Scene {
   // -- rendu de la scène jouée au bureau ------------------------------
   drawDeskStage(ctx) {
     drawFloor(ctx, this.t, {});
+    drawChair(ctx, 236, FEET);
     drawDesk(ctx, DESK_X, this.screen, this.t);
     this.hero.draw(ctx);
     this.npc.draw(ctx);

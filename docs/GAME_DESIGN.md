@@ -166,4 +166,5 @@ SENTINEL), jamais punitive.
    juste des conversations. C'est le rappel que le souvenir du stage vient
    aussi des personnes.
 4. **PNJ manquants** : la carte complète compte 7 profils BI, 6 Data
-   Engineering, 5 produit. Le prototype en expose 4.
+   Engineering, 5 produit. Le prototype en expose 8. Le casting, les rangs de
+   production et la couche d'ambiance sont dans [NPC_CAST.md](NPC_CAST.md).

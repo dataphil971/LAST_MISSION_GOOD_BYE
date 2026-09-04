@@ -69,6 +69,9 @@ async function boot() {
   game.dlg.defineSpeaker('peer', {
     ...CAST.peer, atlas: game.assets.npc, tag: 'npc/peer/talk',
   });
+  game.dlg.defineSpeaker('bi02', {
+    ...CAST.bi02, atlas: game.assets.npc, tag: 'npc/bi02/talk',
+  });
   game.dlg.defineSpeaker('narrator', { ...CAST.narrator });
 
   game.register('title', (g) => new TitleScene(g));

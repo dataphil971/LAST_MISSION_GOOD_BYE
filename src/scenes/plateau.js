@@ -9,7 +9,7 @@ import { Scene } from '../core/game.js';
 import { wait } from '../core/timeline.js';
 import { C } from '../data/palette.js';
 import { T } from '../data/script.js';
-import { drawFloor, drawDesk, GROUND } from './backdrops.js';
+import { drawFloor, drawDesk, drawChair, GROUND } from './backdrops.js';
 import { makeHero, makeNpc } from './cast.js';
 import { Walker } from './walk.js';
 
@@ -105,18 +105,3 @@ export class FloorScene extends Scene {
   }
 }
 
-function drawChair(ctx, x, y) {
-  // fauteuil de bureau vu de profil : dossier, assise, colonne, piètement
-  ctx.fillStyle = C.ui_cell_dark;
-  ctx.fillRect(x - 4, y - 44, 7, 24);        // dossier
-  ctx.fillStyle = C.ui_cell;
-  ctx.fillRect(x - 4, y - 44, 3, 24);
-  ctx.fillStyle = C.ui_cell_dark;
-  ctx.fillRect(x - 6, y - 22, 24, 5);        // assise
-  ctx.fillStyle = C.ui_shadow;
-  ctx.fillRect(x - 6, y - 17, 24, 2);
-  ctx.fillRect(x + 3, y - 15, 4, 11);        // colonne
-  ctx.fillRect(x - 5, y - 4, 21, 3);         // piètement
-  ctx.fillRect(x - 5, y - 1, 3, 2);
-  ctx.fillRect(x + 13, y - 1, 3, 2);
-}

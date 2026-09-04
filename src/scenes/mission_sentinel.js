@@ -14,7 +14,7 @@ import { drawText, wrapText } from '../core/font.js';
 import { wait } from '../core/timeline.js';
 import { C } from '../data/palette.js';
 import { T } from '../data/script.js';
-import { drawFloor, drawDesk, GROUND } from './backdrops.js';
+import { drawFloor, drawDesk, drawChair, GROUND } from './backdrops.js';
 import { makeHero, makeNpc } from './cast.js';
 import { MagicButton } from './magic_button.js';
 
@@ -45,8 +45,8 @@ export class MissionSentinelScene extends Scene {
     }));
     this.violations = this.cards.filter((c) => c.rule).length;
 
-    // Cette fois, c'est le collègue qui est assis et bloqué.
-    this.peer = makeNpc(g, 'peer', { x: 236, y: FEET });
+    // Cette fois, c'est la collègue qui est assise et bloquée.
+    this.peer = makeNpc(g, 'bi02', { x: 236, y: FEET });
     this.peer.play('sit', 4, true);
     this.hero = makeHero(g, { x: -20, y: FEET });
     this.hero.play('idle', 5, true);
@@ -103,9 +103,9 @@ export class MissionSentinelScene extends Scene {
     g.audio.sfx('error');
     yield wait(0.6);
     yield g.dlg.say('narrator', S.peerStuck, { style: 'center', hold: 1.2 });
-    yield g.dlg.say('peer', S.peerCall);
+    yield g.dlg.say('bi02', S.peerCall);
 
-    // Philippe arrive et passe derrière lui. Aucun dialogue : le silence
+    // Philippe arrive et passe derrière elle. Aucun dialogue : le silence
     // est exactement celui de la première occurrence, à l'envers.
     this.hero.face(1);
     yield this.hero.walkTo(206, { audio: g.audio });
@@ -119,7 +119,7 @@ export class MissionSentinelScene extends Scene {
     });
 
     this.peer.restart('talk', 5, true);
-    yield g.dlg.say('peer', S.peerAsk);
+    yield g.dlg.say('bi02', S.peerAsk);
     this.peer.play('sit', 4, true);
     this.hero.play('idle', 5, true);
     yield g.dlg.say('philippe', S.heroAnswer);
@@ -155,7 +155,8 @@ export class MissionSentinelScene extends Scene {
     this.magic.render(ctx, (target) => {
       target.fillStyle = C.outline_deep;
       target.fillRect(0, 0, 384, 216);
-      if (this.phase === 'gag') this.drawDeskStage(target);
+      // Meme ouverture que dans ATLAS : on voit le plateau avant l'agent.
+      if (this.phase === 'gag' || this.phase === 'intro') this.drawDeskStage(target);
       else this.drawAudit(target);
     });
   }
@@ -211,6 +212,7 @@ export class MissionSentinelScene extends Scene {
 
   drawDeskStage(ctx) {
     drawFloor(ctx, this.t, {});
+    drawChair(ctx, 232, FEET);
     drawDesk(ctx, DESK_X, this.screen, this.t);
     this.peer.draw(ctx);
     this.hero.draw(ctx);

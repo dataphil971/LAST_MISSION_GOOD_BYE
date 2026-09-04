@@ -240,13 +240,16 @@ export function drawFloor(ctx, t, opts = {}) {
   px(ctx, 0, 120, 384, 58, evening ? C.sunset_gold : '#F7D08A');
   ctx.globalAlpha = 1;
 
-  // rangee de bureaux du fond
+  // rangee de bureaux du fond, et les gens qui y travaillent
   for (let i = 0; i < 4; i++) {
     const dx = 12 + i * 96;
+    const seat = evening ? EVENING_SEATS[i] : DAY_SEATS[i];
+    if (seat) drawBackWorker(ctx, dx, t, i, evening);
     px(ctx, dx, 112, 76, 5, D.desk_base);
     px(ctx, dx + 4, 117, 68, 10, D.desk_shadow);
     px(ctx, dx + 24, 96, 28, 17, C.ui_shadow);
     px(ctx, dx + 26, 98, 24, 13, evening ? D.screen_dim : D.screen_on);
+    if (seat) drawBackScreen(ctx, dx + 28, 100, t, i, evening);
     px(ctx, dx + 35, 113, 6, 3, C.ui_panel);
   }
 
@@ -256,6 +259,81 @@ export function drawFloor(ctx, t, opts = {}) {
   for (let x = 0; x < 384; x += 32) px(ctx, x, GROUND - 38, 1, 76, D.floor_shadow);
 
   drawPlanter(ctx, 350, GROUND, evening);
+}
+
+// ---------------------------------------------------------------------
+// LE FOND DU PLATEAU -- rang C de docs/NPC_CAST.md
+//
+// Quatre postes, des gens dessus. Aucun sprite, aucun octet d'asset : une
+// tete, des epaules, deux mains sur un clavier, peints comme le reste du
+// decor. C'est la moitie de la sensation de vie du plateau, et ca coute
+// vingt lignes.
+//
+// Tout est fonction du temps, jamais d'un tirage : les captures restent
+// reproductibles et rien ne scintille. Le decalage par nombre d'or evite
+// que les quatre respirent en choeur -- un open space synchronise est la
+// chose la moins credible qu'on puisse dessiner.
+// ---------------------------------------------------------------------
+
+// Un poste vide raconte autant qu'un poste occupe : quelqu'un est en
+// reunion. Le soir, il n'en reste qu'un -- et c'est ce qui dit l'heure.
+const DAY_SEATS = [true, true, false, true];
+const EVENING_SEATS = [false, true, false, false];
+
+// Ce sont les collegues du casting, pas des inconnus : memes tenues, memes
+// cheveux que leurs sprites (tools/rig.py). On doit pouvoir dire « tiens,
+// elle est a son poste » sans qu'aucun nom ne soit affiche nulle part.
+const BACK_TEAM = [
+  // BI_01 : sweat bleu, cheveux courts noirs
+  { shirt: '#3D5680', shade: '#283A57', hair: '#3A3140', skin: '#CB926B',
+    tail: 0 },
+  // BI_06 : sarcelle, cheveux longs attaches -- la queue depasse du dossier
+  { shirt: '#467468', shade: '#2C4A44', hair: '#3A3140', skin: '#CB926B',
+    tail: 5 },
+  // BI_02 : ocre, cheveux longs
+  { shirt: '#A2703B', shade: '#6B4826', hair: '#463641', skin: '#B87F5C',
+    tail: 7 },
+  // DE_03 : mauve, coupe tres courte
+  { shirt: '#5D5480', shade: '#3B3557', hair: '#3A3140', skin: '#84523A',
+    tail: 0 },
+];
+
+/** Une personne assise a un poste du fond, vue de dos par-dessus l ecran. */
+function drawBackWorker(ctx, dx, t, i, evening) {
+  const w = BACK_TEAM[i % BACK_TEAM.length];
+  const cx = dx + 38;                            // l axe de l ecran
+  // Respiration : un pixel, mais tenu une seconde entiere. Un pixel qui
+  // clignote une image sur deux ne respire pas, il tremble.
+  const cycle = 5.5 + i * 0.7;                   // jamais deux au meme rythme
+  const bob = ((t + i * 1.7) % cycle) < 1.1 ? 1 : 0;
+  const y = bob;
+
+  px(ctx, cx - 6, 93 + y, 12, 20, w.shirt);      // epaules et dos
+  px(ctx, cx - 6, 93 + y, 4, 20, w.shade);
+  px(ctx, cx - 2, 92 + y, 4, 3, w.skin);         // la nuque
+  px(ctx, cx - 3, 86 + y, 6, 7, w.skin);         // la tete
+  px(ctx, cx - 4, 84 + y, 8, 4, w.hair);         // les cheveux
+  px(ctx, cx - 4, 88 + y, 2, 4, w.hair);
+  px(ctx, cx + 3, 88 + y, 1, 3, w.hair);
+  if (w.tail) px(ctx, cx - 5, 87 + y, 2, w.tail, w.hair);   // la queue
+
+  if (evening) return;
+  // la main sur la souris, a cote de l ecran : c est ce petit pixel qui
+  // fait la difference entre « quelqu un est assis la » et « quelqu un
+  // travaille ». Deux fois par seconde, pas quatre -- au-dela, ca vibre.
+  const tap = ((t * 1.8 + i) % 1) < 0.5 ? 0 : 1;
+  px(ctx, dx + 56, 110, 4, 2, C.ui_cell_dark);   // la souris
+  px(ctx, dx + 56, 108 + tap, 4, 2, w.skin);     // la main dessus
+}
+
+/** Le contenu d'un ecran du fond : trois lignes qui changent lentement. */
+function drawBackScreen(ctx, x, y, t, i, evening) {
+  if (evening) return;
+  const step = Math.floor(t / 2.5) + i;
+  for (let r = 0; r < 3; r++) {
+    const wdt = 6 + ((step + r * 2) % 4) * 4;
+    px(ctx, x, y + r * 4, wdt, 2, r === 0 ? C.sunset_gold : D.screen_dim);
+  }
 }
 
 /** Le poste de Philippe, dessine par-dessus le plateau (plan 1). */
@@ -274,6 +352,22 @@ export function drawDesk(ctx, x, screen = 'dashboard', t = 0) {
   px(ctx, x + 26, y - 29, 30, 4, C.ui_cell_dark);
   px(ctx, x + 62, y - 33, 8, 8, C.ui_cell);
   px(ctx, x + 70, y - 31, 3, 4, C.ui_cell);
+}
+
+/** Fauteuil de bureau vu de profil. Personne ne s'assoit dans le vide. */
+export function drawChair(ctx, x, y) {
+  ctx.fillStyle = C.ui_cell_dark;
+  ctx.fillRect(x - 4, y - 44, 7, 24);        // dossier
+  ctx.fillStyle = C.ui_cell;
+  ctx.fillRect(x - 4, y - 44, 3, 24);
+  ctx.fillStyle = C.ui_cell_dark;
+  ctx.fillRect(x - 6, y - 22, 24, 5);        // assise
+  ctx.fillStyle = C.ui_shadow;
+  ctx.fillRect(x - 6, y - 17, 24, 2);
+  ctx.fillRect(x + 3, y - 15, 4, 11);        // colonne
+  ctx.fillRect(x - 5, y - 4, 21, 3);         // pietement
+  ctx.fillRect(x - 5, y - 1, 3, 2);
+  ctx.fillRect(x + 13, y - 1, 3, 2);
 }
 
 export function drawScreenContent(ctx, x, y, w, h, kind, t) {

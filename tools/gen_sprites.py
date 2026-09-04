@@ -163,17 +163,28 @@ def npc_tags(base_y, cx):
             kw.setdefault("skin", skin)
             return rig.pose(**kw)
 
-        tags["npc/%s/idle" % name] = [p(view="front"), p(view="front", bob=-1)]
-        tags["npc/%s/idle_side" % name] = [p(view="side"), p(view="side", bob=-1)]
+        # rest=True : la posture propre au personnage (poches, bras croises,
+        # sac) ne s applique qu au repos -- pendant la marche, les bras
+        # balancent comme ceux de tout le monde.
+        tags["npc/%s/idle" % name] = [p(view="front", rest=True),
+                                      p(view="front", rest=True, bob=-1)]
+        tags["npc/%s/idle_side" % name] = [p(view="side", rest=True),
+                                           p(view="side", rest=True, bob=-1)]
         tags["npc/%s/walk" % name] = [
             p(view="side", leg_a=a, leg_b=b, arm_front=-a,
               bob=-1 if a == 0 else 0)
             for a, b in WALK_SWING
         ]
-        tags["npc/%s/talk" % name] = [p(view="front"),
-                                      p(view="front", eyes="closed")]
-        tags["npc/%s/sit" % name] = [p(view="side", sit=True),
-                                     p(view="side", sit=True, bob=-1)]
+        # parler, c est ouvrir la bouche -- un PNJ qui cligne des yeux en
+        # guise de dialogue a l air de dormir debout
+        tags["npc/%s/talk" % name] = [p(view="front", rest=True),
+                                      p(view="front", rest=True, mouth="open"),
+                                      p(view="front", rest=True, mouth="open",
+                                        bob=-1),
+                                      p(view="front", rest=True)]
+        tags["npc/%s/sit" % name] = [p(view="side", sit=True, rest=True),
+                                     p(view="side", sit=True, rest=True,
+                                       bob=-1)]
         # le geste du bouton magique : approche, index, retrait
         tags["npc/%s/press" % name] = [
             p(view="side", hand_up=True),
@@ -246,7 +257,26 @@ def build(tags, cell_w, cell_h, pivot, png_path, json_path, image_name):
     return total, width, height
 
 
+def check_cast_distinct():
+    """Deux collegues ne partagent jamais coiffure ET tenue.
+
+    C est la seule regle de casting qu une machine peut verifier : le reste
+    (taille, posture, accessoire) se juge a l oeil sur la planche de
+    tools/cast_sheet.mjs. Elle tourne a chaque generation parce qu un
+    doublon se voit tres mal dans le code et tres bien dans le jeu.
+    """
+    seen = {}
+    for name, sk in rig.NPC_SKINS.items():
+        key = (sk["style"], sk["shirt"])
+        if key in seen:
+            raise SystemExit(
+                "Casting : %s et %s partagent la coiffure %s et la meme tenue."
+                % (seen[key], name, sk["style"]))
+        seen[key] = name
+
+
 def main():
+    check_cast_distinct()
     out = []
     out.append(("hero_gameplay", build(
         hero_tags(48, 64, 58, 24), 48, 64, (24, 60),

@@ -1671,6 +1671,2030 @@
     "h": 64
    },
    "duration": 120
+  },
+  {
+   "filename": "npc_office 76.ase",
+   "frame": {
+    "x": 192,
+    "y": 576,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 77.ase",
+   "frame": {
+    "x": 240,
+    "y": 576,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 78.ase",
+   "frame": {
+    "x": 288,
+    "y": 576,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 79.ase",
+   "frame": {
+    "x": 336,
+    "y": 576,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 80.ase",
+   "frame": {
+    "x": 0,
+    "y": 640,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 81.ase",
+   "frame": {
+    "x": 48,
+    "y": 640,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 82.ase",
+   "frame": {
+    "x": 96,
+    "y": 640,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 83.ase",
+   "frame": {
+    "x": 144,
+    "y": 640,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 84.ase",
+   "frame": {
+    "x": 192,
+    "y": 640,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 85.ase",
+   "frame": {
+    "x": 240,
+    "y": 640,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 86.ase",
+   "frame": {
+    "x": 288,
+    "y": 640,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 87.ase",
+   "frame": {
+    "x": 336,
+    "y": 640,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 88.ase",
+   "frame": {
+    "x": 0,
+    "y": 704,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 89.ase",
+   "frame": {
+    "x": 48,
+    "y": 704,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 90.ase",
+   "frame": {
+    "x": 96,
+    "y": 704,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 91.ase",
+   "frame": {
+    "x": 144,
+    "y": 704,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 92.ase",
+   "frame": {
+    "x": 192,
+    "y": 704,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 93.ase",
+   "frame": {
+    "x": 240,
+    "y": 704,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 94.ase",
+   "frame": {
+    "x": 288,
+    "y": 704,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 95.ase",
+   "frame": {
+    "x": 336,
+    "y": 704,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 96.ase",
+   "frame": {
+    "x": 0,
+    "y": 768,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 97.ase",
+   "frame": {
+    "x": 48,
+    "y": 768,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 98.ase",
+   "frame": {
+    "x": 96,
+    "y": 768,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 99.ase",
+   "frame": {
+    "x": 144,
+    "y": 768,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 100.ase",
+   "frame": {
+    "x": 192,
+    "y": 768,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 101.ase",
+   "frame": {
+    "x": 240,
+    "y": 768,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 102.ase",
+   "frame": {
+    "x": 288,
+    "y": 768,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 103.ase",
+   "frame": {
+    "x": 336,
+    "y": 768,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 104.ase",
+   "frame": {
+    "x": 0,
+    "y": 832,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 105.ase",
+   "frame": {
+    "x": 48,
+    "y": 832,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 106.ase",
+   "frame": {
+    "x": 96,
+    "y": 832,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 107.ase",
+   "frame": {
+    "x": 144,
+    "y": 832,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 108.ase",
+   "frame": {
+    "x": 192,
+    "y": 832,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 109.ase",
+   "frame": {
+    "x": 240,
+    "y": 832,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 110.ase",
+   "frame": {
+    "x": 288,
+    "y": 832,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 111.ase",
+   "frame": {
+    "x": 336,
+    "y": 832,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 112.ase",
+   "frame": {
+    "x": 0,
+    "y": 896,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 113.ase",
+   "frame": {
+    "x": 48,
+    "y": 896,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 114.ase",
+   "frame": {
+    "x": 96,
+    "y": 896,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 115.ase",
+   "frame": {
+    "x": 144,
+    "y": 896,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 116.ase",
+   "frame": {
+    "x": 192,
+    "y": 896,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 117.ase",
+   "frame": {
+    "x": 240,
+    "y": 896,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 118.ase",
+   "frame": {
+    "x": 288,
+    "y": 896,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 119.ase",
+   "frame": {
+    "x": 336,
+    "y": 896,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 120.ase",
+   "frame": {
+    "x": 0,
+    "y": 960,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 121.ase",
+   "frame": {
+    "x": 48,
+    "y": 960,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 122.ase",
+   "frame": {
+    "x": 96,
+    "y": 960,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 123.ase",
+   "frame": {
+    "x": 144,
+    "y": 960,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 124.ase",
+   "frame": {
+    "x": 192,
+    "y": 960,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 125.ase",
+   "frame": {
+    "x": 240,
+    "y": 960,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 126.ase",
+   "frame": {
+    "x": 288,
+    "y": 960,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 127.ase",
+   "frame": {
+    "x": 336,
+    "y": 960,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 128.ase",
+   "frame": {
+    "x": 0,
+    "y": 1024,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 129.ase",
+   "frame": {
+    "x": 48,
+    "y": 1024,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 130.ase",
+   "frame": {
+    "x": 96,
+    "y": 1024,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 131.ase",
+   "frame": {
+    "x": 144,
+    "y": 1024,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 132.ase",
+   "frame": {
+    "x": 192,
+    "y": 1024,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 133.ase",
+   "frame": {
+    "x": 240,
+    "y": 1024,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 134.ase",
+   "frame": {
+    "x": 288,
+    "y": 1024,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 135.ase",
+   "frame": {
+    "x": 336,
+    "y": 1024,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 136.ase",
+   "frame": {
+    "x": 0,
+    "y": 1088,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 137.ase",
+   "frame": {
+    "x": 48,
+    "y": 1088,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 138.ase",
+   "frame": {
+    "x": 96,
+    "y": 1088,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 139.ase",
+   "frame": {
+    "x": 144,
+    "y": 1088,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 140.ase",
+   "frame": {
+    "x": 192,
+    "y": 1088,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 141.ase",
+   "frame": {
+    "x": 240,
+    "y": 1088,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 142.ase",
+   "frame": {
+    "x": 288,
+    "y": 1088,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 143.ase",
+   "frame": {
+    "x": 336,
+    "y": 1088,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 144.ase",
+   "frame": {
+    "x": 0,
+    "y": 1152,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 145.ase",
+   "frame": {
+    "x": 48,
+    "y": 1152,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 146.ase",
+   "frame": {
+    "x": 96,
+    "y": 1152,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 147.ase",
+   "frame": {
+    "x": 144,
+    "y": 1152,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 148.ase",
+   "frame": {
+    "x": 192,
+    "y": 1152,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 149.ase",
+   "frame": {
+    "x": 240,
+    "y": 1152,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 150.ase",
+   "frame": {
+    "x": 288,
+    "y": 1152,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 151.ase",
+   "frame": {
+    "x": 336,
+    "y": 1152,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 152.ase",
+   "frame": {
+    "x": 0,
+    "y": 1216,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 153.ase",
+   "frame": {
+    "x": 48,
+    "y": 1216,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 154.ase",
+   "frame": {
+    "x": 96,
+    "y": 1216,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 155.ase",
+   "frame": {
+    "x": 144,
+    "y": 1216,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 156.ase",
+   "frame": {
+    "x": 192,
+    "y": 1216,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 157.ase",
+   "frame": {
+    "x": 240,
+    "y": 1216,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 158.ase",
+   "frame": {
+    "x": 288,
+    "y": 1216,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 159.ase",
+   "frame": {
+    "x": 336,
+    "y": 1216,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 160.ase",
+   "frame": {
+    "x": 0,
+    "y": 1280,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 161.ase",
+   "frame": {
+    "x": 48,
+    "y": 1280,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 162.ase",
+   "frame": {
+    "x": 96,
+    "y": 1280,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 163.ase",
+   "frame": {
+    "x": 144,
+    "y": 1280,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 164.ase",
+   "frame": {
+    "x": 192,
+    "y": 1280,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 165.ase",
+   "frame": {
+    "x": 240,
+    "y": 1280,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 166.ase",
+   "frame": {
+    "x": 288,
+    "y": 1280,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
+  },
+  {
+   "filename": "npc_office 167.ase",
+   "frame": {
+    "x": 336,
+    "y": 1280,
+    "w": 48,
+    "h": 64
+   },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 64
+   },
+   "sourceSize": {
+    "w": 48,
+    "h": 64
+   },
+   "duration": 120
   }
  ],
  "meta": {
@@ -1680,7 +3704,7 @@
   "format": "RGBA8888",
   "size": {
    "w": 384,
-   "h": 640
+   "h": 1344
   },
   "scale": "1",
   "frameTags": [
@@ -1705,127 +3729,271 @@
    {
     "name": "npc/reception/talk",
     "from": 12,
-    "to": 13,
-    "direction": "forward"
-   },
-   {
-    "name": "npc/reception/sit",
-    "from": 14,
     "to": 15,
     "direction": "forward"
    },
    {
-    "name": "npc/reception/press",
+    "name": "npc/reception/sit",
     "from": 16,
-    "to": 18,
+    "to": 17,
     "direction": "forward"
    },
    {
-    "name": "npc/tutor/idle",
-    "from": 19,
+    "name": "npc/reception/press",
+    "from": 18,
     "to": 20,
     "direction": "forward"
    },
    {
-    "name": "npc/tutor/idle_side",
+    "name": "npc/tutor/idle",
     "from": 21,
     "to": 22,
     "direction": "forward"
    },
    {
-    "name": "npc/tutor/walk",
+    "name": "npc/tutor/idle_side",
     "from": 23,
-    "to": 30,
+    "to": 24,
     "direction": "forward"
    },
    {
-    "name": "npc/tutor/talk",
-    "from": 31,
+    "name": "npc/tutor/walk",
+    "from": 25,
     "to": 32,
     "direction": "forward"
    },
    {
-    "name": "npc/tutor/sit",
+    "name": "npc/tutor/talk",
     "from": 33,
-    "to": 34,
+    "to": 36,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/tutor/sit",
+    "from": 37,
+    "to": 38,
     "direction": "forward"
    },
    {
     "name": "npc/tutor/press",
-    "from": 35,
-    "to": 37,
-    "direction": "forward"
-   },
-   {
-    "name": "npc/bi07/idle",
-    "from": 38,
-    "to": 39,
-    "direction": "forward"
-   },
-   {
-    "name": "npc/bi07/idle_side",
-    "from": 40,
+    "from": 39,
     "to": 41,
     "direction": "forward"
    },
    {
-    "name": "npc/bi07/walk",
+    "name": "npc/bi07/idle",
     "from": 42,
-    "to": 49,
+    "to": 43,
     "direction": "forward"
    },
    {
-    "name": "npc/bi07/talk",
-    "from": 50,
-    "to": 51,
+    "name": "npc/bi07/idle_side",
+    "from": 44,
+    "to": 45,
     "direction": "forward"
    },
    {
-    "name": "npc/bi07/sit",
-    "from": 52,
+    "name": "npc/bi07/walk",
+    "from": 46,
     "to": 53,
     "direction": "forward"
    },
    {
-    "name": "npc/bi07/press",
+    "name": "npc/bi07/talk",
     "from": 54,
-    "to": 56,
+    "to": 57,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi07/sit",
+    "from": 58,
+    "to": 59,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi07/press",
+    "from": 60,
+    "to": 62,
     "direction": "forward"
    },
    {
     "name": "npc/peer/idle",
-    "from": 57,
-    "to": 58,
+    "from": 63,
+    "to": 64,
     "direction": "forward"
    },
    {
     "name": "npc/peer/idle_side",
-    "from": 59,
-    "to": 60,
+    "from": 65,
+    "to": 66,
     "direction": "forward"
    },
    {
     "name": "npc/peer/walk",
-    "from": 61,
-    "to": 68,
+    "from": 67,
+    "to": 74,
     "direction": "forward"
    },
    {
     "name": "npc/peer/talk",
-    "from": 69,
-    "to": 70,
+    "from": 75,
+    "to": 78,
     "direction": "forward"
    },
    {
     "name": "npc/peer/sit",
-    "from": 71,
-    "to": 72,
+    "from": 79,
+    "to": 80,
     "direction": "forward"
    },
    {
     "name": "npc/peer/press",
-    "from": 73,
-    "to": 75,
+    "from": 81,
+    "to": 83,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi01/idle",
+    "from": 84,
+    "to": 85,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi01/idle_side",
+    "from": 86,
+    "to": 87,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi01/walk",
+    "from": 88,
+    "to": 95,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi01/talk",
+    "from": 96,
+    "to": 99,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi01/sit",
+    "from": 100,
+    "to": 101,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi01/press",
+    "from": 102,
+    "to": 104,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi06/idle",
+    "from": 105,
+    "to": 106,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi06/idle_side",
+    "from": 107,
+    "to": 108,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi06/walk",
+    "from": 109,
+    "to": 116,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi06/talk",
+    "from": 117,
+    "to": 120,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi06/sit",
+    "from": 121,
+    "to": 122,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi06/press",
+    "from": 123,
+    "to": 125,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi02/idle",
+    "from": 126,
+    "to": 127,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi02/idle_side",
+    "from": 128,
+    "to": 129,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi02/walk",
+    "from": 130,
+    "to": 137,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi02/talk",
+    "from": 138,
+    "to": 141,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi02/sit",
+    "from": 142,
+    "to": 143,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/bi02/press",
+    "from": 144,
+    "to": 146,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/de03/idle",
+    "from": 147,
+    "to": 148,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/de03/idle_side",
+    "from": 149,
+    "to": 150,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/de03/walk",
+    "from": 151,
+    "to": 158,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/de03/talk",
+    "from": 159,
+    "to": 162,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/de03/sit",
+    "from": 163,
+    "to": 164,
+    "direction": "forward"
+   },
+   {
+    "name": "npc/de03/press",
+    "from": 165,
+    "to": 167,
     "direction": "forward"
    }
   ],
